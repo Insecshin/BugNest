@@ -1,6 +1,10 @@
 # BugNest
 
-BugNest is a lightweight issue and defect management platform.
+A lightweight issue and defect management platform.
+
+## Status
+
+🚧 Under Development
 
 ## Tech Stack
 
@@ -9,10 +13,10 @@ BugNest is a lightweight issue and defect management platform.
 - Maven
 - MySQL
 
-## Status
+## Roadmap
 
-🚧 Under Development
-
-## Features
-
-Coming soon.
+- [ ] REST API
+- [ ] Issue CRUD
+- [ ] MyBatis Integration
+- [ ] Automated Testing
+- [ ] Deployment
