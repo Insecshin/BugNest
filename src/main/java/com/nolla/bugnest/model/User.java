@@ -7,4 +7,24 @@ public class User {
     public User(String username){
         this.username = username;
     }
+
+    public long getId(){
+        return id;
+    }
+
+    public String getUsername(){
+        return username;
+    }
+
+    public void assignId(Long id){
+        if(this.id != null){
+            throw new IllegalStateException("User already has an id");
+        }
+
+        if(id == null || id <= 0){
+            throw new IllegalArgumentException("Id must be positive");
+        }
+
+        this.id = id;
+    }
 }
