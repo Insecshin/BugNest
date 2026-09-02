@@ -2,10 +2,12 @@ package com.nolla.bugnest.service;
 
 import com.nolla.bugnest.model.User;
 import com.nolla.bugnest.repository.UserRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.NoSuchElementException;
 
+@Service
 public class UserService {
     private final UserRepository userRepository;
 
