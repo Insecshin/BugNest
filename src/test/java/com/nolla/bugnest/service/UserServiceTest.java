@@ -82,6 +82,7 @@ public class UserServiceTest {
         );
     }
 
+    @Test
     void shouldThrowWhenDeletingNonExistingUser(){
         MemoryUserRepository repository = new MemoryUserRepository();
         UserService service = new UserService(repository);

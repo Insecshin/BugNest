@@ -38,11 +38,7 @@ public class UserService {
     }
 
     public void deleteUser(Long id){
-        User user = userRepository.findById(id);
-
-        if(user == null){
-            throw new NoSuchElementException("User not found");
-        }
+        getUser(id);
 
         userRepository.deleteById(id);
     }
