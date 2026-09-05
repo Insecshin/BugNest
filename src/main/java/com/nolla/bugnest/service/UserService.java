@@ -44,4 +44,16 @@ public class UserService {
 
         userRepository.deleteById(id);
     }
+
+    public User updateUser(Long id, String username){
+        if (username == null || username.isBlank()){
+            throw new IllegalArgumentException("Username must not be blank")
+        }
+
+        User user = getUser(id);
+
+        user.rename(username);
+
+        return userRepository.update(user);
+    }
 }

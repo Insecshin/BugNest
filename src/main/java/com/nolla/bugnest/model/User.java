@@ -27,4 +27,8 @@ public class User {
 
         this.id = id;
     }
+
+    public void rename(String username){
+        this.username = username;
+    }
 }
