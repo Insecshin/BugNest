@@ -47,7 +47,7 @@ public class UserService {
 
     public User updateUser(Long id, String username){
         if (username == null || username.isBlank()){
-            throw new IllegalArgumentException("Username must not be blank")
+            throw new IllegalArgumentException("Username must not be blank");
         }
 
         User user = getUser(id);
