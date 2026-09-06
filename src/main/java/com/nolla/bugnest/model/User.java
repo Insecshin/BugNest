@@ -8,7 +8,7 @@ public class User {
         this.username = username;
     }
 
-    public Long getId(){
+    public long getId(){
         return id;
     }
 

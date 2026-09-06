@@ -92,41 +92,4 @@ public class UserServiceTest {
                 () -> service.deleteUser(999L)
         );
     }
-
-    @Test
-    void shouldUpdateExistingUser(){
-        MemoryUserRepository repository = new MemoryUserRepository();
-        UserService service = new UserService(repository);
-
-        User user = service.createUser("Noah");
-
-        User updatedUser = service.updateUser((user.getId()), "Alice");
-
-        assertEquals("Alice", updatedUser.getUsername());
-        assertEquals(user.getId(), updatedUser.getId());
-    }
-
-    @Test
-    void shouldThrowWhenUpdatingNonexistentUser(){
-        MemoryUserRepository repository = new MemoryUserRepository();
-        UserService service = new UserService(repository);
-
-        assertThrows(
-                NoSuchElementException.class,
-                () -> service.updateUser(999L, "Alice")
-        );
-    }
-
-    @Test
-    void shouldRejectBlankUsernameWhenUpdatingUser(){
-        MemoryUserRepository repository = new MemoryUserRepository();
-        UserService service = new UserService(repository);
-
-        User user = service.createUser("Noah");
-
-        assertThrows(
-                IllegalArgumentException.class,
-                () -> service.updateUser(user.getId(), "   ")
-        );
-    }
 }

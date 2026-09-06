@@ -1,7 +1,6 @@
 package com.nolla.bugnest.controller;
 
 import com.nolla.bugnest.dto.CreateUserRequest;
-import com.nolla.bugnest.dto.UpdateUserRequest;
 import com.nolla.bugnest.model.User;
 import com.nolla.bugnest.service.UserService;
 import org.springframework.http.HttpStatus;
@@ -38,13 +37,5 @@ public class UserController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteUser(@PathVariable Long id){
         userService.deleteUser(id);
-    }
-
-    @PutMapping("/{id}")
-    public User updateUser(
-            @PathVariable Long id,
-            @RequestBody UpdateUserRequest request
-    ){
-        return userService.updateUser(id, request.username());
     }
 }
