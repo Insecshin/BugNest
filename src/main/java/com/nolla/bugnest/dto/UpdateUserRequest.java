@@ -1,4 +1,4 @@
 package com.nolla.bugnest.dto;
 
-public record UpdateUserRequest() {
+public record UpdateUserRequest(String username) {
 }
