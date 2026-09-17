@@ -1,0 +1,12 @@
+spring:
+  flyway:
+    enabled: true
+    url: ${BUGNEST_DB_URL:jdbc:postgresql://localhost:5432/bugnest}
+    user: ${BUGNEST_DB_USER}
+    password: ${BUGNEST_DB_PASSWORD}
+    locations: classpath:db/migration
+    default-schema: public
+    validate-on-migrate: true
+    validate-migration-naming: true
+    clean-disabled: true
+    baseline-on-migrate: false
