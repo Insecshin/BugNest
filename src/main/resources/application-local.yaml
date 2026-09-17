@@ -1,11 +1,13 @@
 spring:
   config:
     import: optional:file:.env[.properties]
+  datasource:
+    url: ${BUGNEST_DB_URL:jdbc:postgresql://localhost:5432/bugnest}
+    username: ${BUGNEST_DB_USER}
+    password: ${BUGNEST_DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
   flyway:
     enabled: true
-    url: ${BUGNEST_DB_URL:jdbc:postgresql://localhost:5432/bugnest}
-    user: ${BUGNEST_DB_USER}
-    password: ${BUGNEST_DB_PASSWORD}
     locations: classpath:db/migration
     default-schema: public
     validate-on-migrate: true
