@@ -1,4 +1,6 @@
 spring:
+  config:
+    import: optional:file:.env[.properties]
   flyway:
     enabled: true
     url: ${BUGNEST_DB_URL:jdbc:postgresql://localhost:5432/bugnest}
