@@ -37,6 +37,16 @@ src/test/java/                       单元测试和上下文测试
 - 用户存储实现：`MemoryUserRepository`
 - 数据访问接口：`UserRepository`
 
+## Flyway 数据库迁移
+
+- Flyway 负责管理 PostgreSQL 数据库结构，不负责 Repository 或业务数据。
+- 迁移文件目录：`src/main/resources/db/migration/`
+- 文件命名格式：`V{版本}__{描述}.sql`，已执行的迁移文件不得修改，只能新增更高版本。
+- 当前首个迁移：`V1__create_app_users.sql`。
+- 本地数据库配置位于 `application-local.yaml`，数据库账号通过 `BUGNEST_DB_USER` 和 `BUGNEST_DB_PASSWORD` 环境变量提供。
+- 现有手工创建的数据库首次接入 Flyway 前，需要单独执行一次 baseline；不要将 `baseline-on-migrate` 永久开启。
+- 自动化数据库测试使用 Testcontainers，不连接开发机真实数据库。
+
 ## 常用命令
 
 Windows：
