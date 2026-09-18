@@ -2,7 +2,7 @@
 
 ## 项目概览
 
-BugNest 是一个轻量级缺陷管理平台，当前处于开发阶段。项目使用 Spring Boot 提供 REST API，用户数据暂时保存在内存中。
+BugNest 是一个轻量级缺陷管理平台，当前处于开发阶段。项目使用 Spring Boot 提供 REST API，账户数据通过 JDBC 保存到 PostgreSQL；旧内存用户实现仅保留给测试和兼容代码。
 
 ## 项目文档读取规则
 
@@ -13,13 +13,23 @@ BugNest 是一个轻量级缺陷管理平台，当前处于开发阶段。项目
 
 ## 技术栈
 
-- Java 21
-- Spring Boot 4.1.1
+- Java LTS（当前基线 Java 21；补丁版本跟随官方最新稳定版）
+- Spring Boot 4.x（当前基线 4.1.1；升级时使用官方最新稳定且兼容的版本）
 - Maven（使用 Maven Wrapper）
 - Spring Web MVC
 - 测试：Spring Boot Test / JUnit
 
-注意：README 中列出的 MySQL 和 MyBatis 尚未接入，当前没有数据库连接配置。
+### 技术选型与企业工程标准
+
+- 技术选型优先采用官方当前最新稳定版、长期维护版本和企业生产实践；不得使用 alpha、beta、snapshot 或无人维护的依赖。
+- “最新”必须以实施时的官方发布信息和兼容性验证为准，不得为了追版本号盲目升级；升级必须同步验证编译、测试、安全扫描和运行时兼容性。
+- Maven 依赖优先通过 Spring Boot BOM 统一版本；直接声明版本时必须有明确原因，并定期检查 CVE、许可证和依赖生命周期。
+- 浏览器端异步请求统一使用标准 Fetch API 或前端框架提供的现代 HTTP 客户端；禁止使用 XMLHttpRequest、jQuery AJAX 或以 AJAX 为基础的旧式封装。页面交互保持在当前注册页面，不因接口调用跳转 URL。
+- 后端接口使用标准 HTTP、REST/JSON 和明确的状态码；业务逻辑不得依赖前端是否刷新或跳转页面。
+- 新增前端技术栈前必须先确认项目确实需要；不为一个接口引入大型框架或额外运行时。
+- 安全、密码、数据库和测试相关依赖必须使用官方维护或行业认可的实现，并在生产代码中保留可验证的自动化测试。
+
+注意：README 中列出的 MySQL 和 MyBatis 尚未接入，当前数据库实现为 PostgreSQL + JDBC；除非需求明确，不引入 ORM 或替换现有数据访问方案。
 
 ## 目录结构
 
@@ -28,7 +38,7 @@ src/main/java/com/nolla/bugnest/
 ├── controller/   REST 控制器
 ├── service/      业务逻辑
 ├── repository/   数据访问接口及内存实现
-├── model/        领域模型
+├── model/        领域模型（Account、旧 User）
 ├── dto/          请求 DTO
 └── exception/    全局异常处理
 
@@ -41,8 +51,9 @@ src/test/java/                       单元测试和上下文测试
 - 应用名称：`bugnest`
 - 配置文件：`src/main/resources/application.yaml`
 - 默认端口未覆盖，使用 Spring Boot 默认端口 `8080`
-- 用户存储实现：`MemoryUserRepository`
-- 数据访问接口：`UserRepository`
+- 账户存储实现：`JdbcAccountRepository`
+- 账户数据访问接口：`AccountRepository`
+- 旧用户存储：`MemoryUserRepository`，不注册为生产 Bean
 
 ## Flyway 数据库迁移
 
@@ -77,11 +88,9 @@ Linux/macOS：
 
 - `GET /api/ping`：健康检查
 - `GET /api/add?a=2&b=3`：简单加法示例
-- `POST /users`：创建用户，请求体为 `{ "username": "Noah" }`
-- `GET /users`：查询全部用户
-- `GET /users/{id}`：查询单个用户
-- `PUT /users/{id}`：更新用户名
-- `DELETE /users/{id}`：删除用户
+- `POST /auth/sign-up`：注册账户
+- `POST /auth/sign-up/username-preview`：预览或检查用户名
+- `PATCH /accounts/{id}/nickname`：修改昵称
 
 ## 开发约定
 
