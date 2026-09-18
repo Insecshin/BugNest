@@ -34,3 +34,6 @@ build/
 
 # Local database credentials
 .env
+
+# Test release documents
+提测文档/
