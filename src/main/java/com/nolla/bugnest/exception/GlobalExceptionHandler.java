@@ -25,4 +25,10 @@ public class GlobalExceptionHandler {
     ){
         return exception.getMessage();
     }
+
+    @ExceptionHandler(AccountConflictException.class)
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public String handleAccountConflictException(AccountConflictException exception) {
+        return exception.getMessage();
+    }
 }
