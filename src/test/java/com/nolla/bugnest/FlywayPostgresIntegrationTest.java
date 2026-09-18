@@ -38,7 +38,7 @@ class FlywayPostgresIntegrationTest {
                 """
                 SELECT count(*)
                 FROM flyway_schema_history
-                WHERE version = '1' AND success = true
+                WHERE version = '2' AND success = true
                 """,
                 Integer.class
         );
@@ -49,7 +49,18 @@ class FlywayPostgresIntegrationTest {
                 FROM information_schema.columns
                 WHERE table_schema = 'public'
                   AND table_name = 'app_users'
-                  AND column_name IN ('user_id', 'user_name', 'username', 'email', 'password_hash', 'created_at')
+                  AND column_name IN ('user_id', 'user_name', 'nickname', 'email', 'password_hash', 'created_at')
+                """,
+                Integer.class
+        );
+
+        Integer oldUsernameCount = jdbcTemplate.queryForObject(
+                """
+                SELECT count(*)
+                FROM information_schema.columns
+                WHERE table_schema = 'public'
+                  AND table_name = 'app_users'
+                  AND column_name = 'username'
                 """,
                 Integer.class
         );
@@ -66,6 +77,7 @@ class FlywayPostgresIntegrationTest {
         assertEquals(1, tableCount);
         assertEquals(1, migrationCount);
         assertEquals(6, columnCount);
+        assertEquals(0, oldUsernameCount);
         assertEquals(1, emailIndexCount);
     }
 }
