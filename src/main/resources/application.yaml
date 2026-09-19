@@ -1,3 +1,17 @@
 spring:
   application:
     name: bugnest
+  session:
+    timeout: 30m
+    redis:
+      namespace: bugnest:sessions
+  data:
+    redis:
+      connect-timeout: 2s
+      timeout: 2s
+
+bugnest:
+  security:
+    rate-limit:
+      hmac-key: ${BUGNEST_RATE_LIMIT_HMAC_KEY}
+      trusted-proxies: ${BUGNEST_TRUSTED_PROXIES:}
