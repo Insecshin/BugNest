@@ -11,6 +11,8 @@ public interface AccountRepository {
 
     Optional<Account> findByEmail(String email);
 
+    Optional<Account> findByUserName(String userName);
+
     boolean existsByUserName(String userName);
 
     Account updateNickname(Long id, String nickname);

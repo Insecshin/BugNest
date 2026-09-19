@@ -41,8 +41,8 @@ public class PasswordPolicy {
             throw new IllegalArgumentException("Password and confirmation are required");
         }
 
-        String normalizedPassword = Normalizer.normalize(password, Normalizer.Form.NFC);
-        String normalizedConfirmation = Normalizer.normalize(confirmPassword, Normalizer.Form.NFC);
+        String normalizedPassword = normalizeForAuthentication(password);
+        String normalizedConfirmation = normalizeForAuthentication(confirmPassword);
 
         if (!normalizedPassword.equals(normalizedConfirmation)) {
             throw new IllegalArgumentException("Passwords do not match");
@@ -61,5 +61,12 @@ public class PasswordPolicy {
         }
 
         return normalizedPassword;
+    }
+
+    public String normalizeForAuthentication(String password) {
+        if (password == null) {
+            throw new IllegalArgumentException("Password is required");
+        }
+        return Normalizer.normalize(password, Normalizer.Form.NFC);
     }
 }

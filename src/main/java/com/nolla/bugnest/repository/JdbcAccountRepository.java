@@ -68,6 +68,15 @@ public class JdbcAccountRepository implements AccountRepository {
     }
 
     @Override
+    public Optional<Account> findByUserName(String userName) {
+        return jdbcTemplate.query(
+                "SELECT " + ACCOUNT_COLUMNS + " FROM public.app_users WHERE user_name = ?",
+                ACCOUNT_ROW_MAPPER,
+                userName
+        ).stream().findFirst();
+    }
+
+    @Override
     public boolean existsByUserName(String userName) {
         Integer count = jdbcTemplate.queryForObject(
                 "SELECT count(*) FROM public.app_users WHERE user_name = ?",

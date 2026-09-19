@@ -65,6 +65,11 @@ class AccountControllerTest {
         }
 
         @Override
+        public Optional<Account> findByUserName(String userName) {
+            return Optional.empty();
+        }
+
+        @Override
         public boolean existsByUserName(String userName) {
             return false;
         }

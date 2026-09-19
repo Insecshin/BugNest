@@ -139,6 +139,13 @@ class AccountServiceTest {
         }
 
         @Override
+        public Optional<Account> findByUserName(String userName) {
+            return accounts.values().stream()
+                    .filter(account -> account.getUserName().equals(userName))
+                    .findFirst();
+        }
+
+        @Override
         public boolean existsByUserName(String userName) {
             return accounts.values().stream()
                     .anyMatch(account -> account.getUserName().equals(userName));

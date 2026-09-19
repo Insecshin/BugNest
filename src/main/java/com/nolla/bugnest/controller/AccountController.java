@@ -6,6 +6,7 @@ import com.nolla.bugnest.dto.UpdateNicknameRequest;
 import com.nolla.bugnest.dto.UsernamePreviewRequest;
 import com.nolla.bugnest.dto.UsernamePreviewResponse;
 import com.nolla.bugnest.service.AccountService;
+import com.nolla.bugnest.security.AccountPrincipal;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 
 @RestController
 public class AccountController {
@@ -37,8 +39,9 @@ public class AccountController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void updateNickname(
             @PathVariable Long id,
-            @RequestBody UpdateNicknameRequest request
+            @RequestBody UpdateNicknameRequest request,
+            @AuthenticationPrincipal AccountPrincipal principal
     ) {
-        accountService.updateNickname(id, request == null ? null : request.nickname());
+        accountService.updateNickname(principal.id(), id, request == null ? null : request.nickname());
     }
 }

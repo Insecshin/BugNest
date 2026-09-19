@@ -11,8 +11,10 @@ import org.springframework.stereotype.Service;
 
 import java.util.Locale;
 import java.util.NoSuchElementException;
+import java.util.Objects;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.regex.Pattern;
+import org.springframework.security.access.AccessDeniedException;
 
 @Service
 public class AccountService {
@@ -95,7 +97,10 @@ public class AccountService {
         return new UsernamePreviewResponse(findAvailableUserName(nickname), true);
     }
 
-    public void updateNickname(Long id, String nickname) {
+    public void updateNickname(Long authenticatedAccountId, Long id, String nickname) {
+        if (!Objects.equals(authenticatedAccountId, id)) {
+            throw new AccessDeniedException("Cannot update another account");
+        }
         String normalizedNickname = normalizeNickname(nickname);
         if (accountRepository.findById(id).isEmpty()) {
             throw new NoSuchElementException("Account not found");
