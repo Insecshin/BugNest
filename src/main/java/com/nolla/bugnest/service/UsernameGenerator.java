@@ -1,10 +1,12 @@
 package com.nolla.bugnest.service;
 
 import com.ibm.icu.text.Transliterator;
+import org.springframework.stereotype.Component;
 
 import java.text.Normalizer;
 import java.util.Locale;
 
+@Component
 public class UsernameGenerator {
     private static final int MAX_BASE_LENGTH = 24;
     private static final String FALLBACK = "user";
