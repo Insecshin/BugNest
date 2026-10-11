@@ -102,6 +102,10 @@ public class WebSecurityConfiguration {
                         .sessionCreationPolicy(org.springframework.security.config.http.SessionCreationPolicy.IF_REQUIRED)
                         .sessionFixation(fixation -> fixation.changeSessionId()))
                 .authorizeHttpRequests(authorize -> authorize
+                        .requestMatchers(HttpMethod.GET,
+                                "/", "/index.html", "/issues", "/settings", "/login", "/register",
+                                "/favicon.svg", "/assets/**"
+                        ).permitAll()
                         .requestMatchers(HttpMethod.POST,
                                 "/auth/login",
                                 "/auth/sign-up",
@@ -120,7 +124,9 @@ public class WebSecurityConfiguration {
                 .requestCache(AbstractHttpConfigurer::disable)
                 .formLogin(AbstractHttpConfigurer::disable)
                 .httpBasic(AbstractHttpConfigurer::disable)
-                .logout(AbstractHttpConfigurer::disable)
+                .logout(logout -> logout
+                        .logoutUrl("/auth/logout")
+                        .logoutSuccessHandler((request, response, authentication) -> response.setStatus(204)))
                 .addFilterAt(loginFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();
     }

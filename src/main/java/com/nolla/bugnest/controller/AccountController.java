@@ -1,6 +1,7 @@
 package com.nolla.bugnest.controller;
 
 import com.nolla.bugnest.dto.SignUpRequest;
+import com.nolla.bugnest.dto.LoginResponse;
 import com.nolla.bugnest.dto.SignUpResponse;
 import com.nolla.bugnest.dto.UpdateNicknameRequest;
 import com.nolla.bugnest.dto.UsernamePreviewRequest;
@@ -9,6 +10,7 @@ import com.nolla.bugnest.service.AccountService;
 import com.nolla.bugnest.security.AccountPrincipal;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,6 +24,11 @@ public class AccountController {
 
     public AccountController(AccountService accountService) {
         this.accountService = accountService;
+    }
+
+    @GetMapping("/accounts/me")
+    public LoginResponse currentAccount(@AuthenticationPrincipal AccountPrincipal principal) {
+        return accountService.currentAccount(principal.id());
     }
 
     @PostMapping("/auth/sign-up")

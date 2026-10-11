@@ -1,6 +1,7 @@
 package com.nolla.bugnest.service;
 
 import com.nolla.bugnest.dto.SignUpRequest;
+import com.nolla.bugnest.dto.LoginResponse;
 import com.nolla.bugnest.dto.UsernamePreviewRequest;
 import com.nolla.bugnest.dto.UsernamePreviewResponse;
 import com.nolla.bugnest.exception.AccountConflictException;
@@ -106,6 +107,12 @@ public class AccountService {
             throw new NoSuchElementException("Account not found");
         }
         accountRepository.updateNickname(id, normalizedNickname);
+    }
+
+    public LoginResponse currentAccount(Long id) {
+        Account account = accountRepository.findById(id)
+                .orElseThrow(() -> new NoSuchElementException("Account not found"));
+        return new LoginResponse(account.getId(), account.getUserName(), account.getNickname());
     }
 
     private String findAvailableUserName(String nickname) {

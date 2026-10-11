@@ -13,6 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
+import java.util.NoSuchElementException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -36,6 +37,17 @@ class AccountServiceTest {
             new PasswordPolicy(Set.of()),
             new UsernameGenerator()
     );
+
+    @Test
+    void currentAccountUsesTheLatestNicknameAndOnlyPublicFields() {
+        Account saved = repository.save(new Account("profile", "private@example.com", "private-hash", "旧昵称"));
+        service.updateNickname(saved.getId(), saved.getId(), "新昵称");
+        var response = service.currentAccount(saved.getId());
+        assertEquals(saved.getId(), response.userId());
+        assertEquals("profile", response.userName());
+        assertEquals("新昵称", response.nickname());
+        assertThrows(NoSuchElementException.class, () -> service.currentAccount(999L));
+    }
 
     @Test
     void shouldCreateAccountWithGeneratedUsernameAndHashedPassword() {
