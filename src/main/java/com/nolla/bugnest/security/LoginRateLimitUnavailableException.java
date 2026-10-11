@@ -4,6 +4,6 @@ import org.springframework.security.authentication.AuthenticationServiceExceptio
 
 public class LoginRateLimitUnavailableException extends AuthenticationServiceException {
     public LoginRateLimitUnavailableException(Throwable cause) {
-        super("Login rate limiting is unavailable", cause);
+        super("Authentication infrastructure or lease is unavailable", cause);
     }
 }

@@ -1,4 +1,0 @@
-bugnest:
-  security:
-    rate-limit:
-      hmac-key: test-only-hmac-key-with-at-least-32-bytes

@@ -11,6 +11,7 @@ import javax.crypto.spec.SecretKeySpec;
 import java.nio.charset.StandardCharsets;
 import java.util.HexFormat;
 import java.util.List;
+import java.util.UUID;
 
 @Component
 public class LoginRateLimiter {
@@ -34,14 +35,18 @@ public class LoginRateLimiter {
             return math.ceil(waitMs / 1000)
             """, Long.class);
 
-    private static final DefaultRedisScript<Long> ACCOUNT_RETRY_AFTER = new DefaultRedisScript<>("""
+    private static final DefaultRedisScript<Long> ACQUIRE_ACCOUNT = new DefaultRedisScript<>("""
             local blockedUntil = tonumber(redis.call('HGET', KEYS[1], 'blockedUntil')) or 0
             local nowParts = redis.call('TIME')
             local now = tonumber(nowParts[1]) * 1000 + math.floor(tonumber(nowParts[2]) / 1000)
-            return math.max(0, math.ceil((blockedUntil - now) / 1000))
+            local retryAfter = math.max(0, math.ceil((blockedUntil - now) / 1000))
+            if retryAfter > 0 then return retryAfter end
+            if not redis.call('SET', KEYS[2], ARGV[1], 'NX', 'PX', 10000) then return 1 end
+            return 0
             """, Long.class);
 
     private static final DefaultRedisScript<Long> RECORD_FAILURE = new DefaultRedisScript<>("""
+            if redis.call('GET', KEYS[2]) ~= ARGV[1] then return -1 end
             local failures = redis.call('HINCRBY', KEYS[1], 'failures', 1)
             local delay = 0
             if failures >= 5 then
@@ -55,7 +60,19 @@ public class LoginRateLimiter {
                 redis.call('HSET', KEYS[1], 'blockedUntil', now + delay * 1000)
             end
             redis.call('EXPIRE', KEYS[1], 86400)
+            redis.call('DEL', KEYS[2])
             return delay
+            """, Long.class);
+
+    private static final DefaultRedisScript<Long> RECORD_SUCCESS = new DefaultRedisScript<>("""
+            if redis.call('GET', KEYS[2]) ~= ARGV[1] then return -1 end
+            redis.call('DEL', KEYS[1], KEYS[2])
+            return 0
+            """, Long.class);
+
+    private static final DefaultRedisScript<Long> RELEASE_ACCOUNT = new DefaultRedisScript<>("""
+            if redis.call('GET', KEYS[2]) == ARGV[1] then return redis.call('DEL', KEYS[2]) end
+            return 0
             """, Long.class);
 
     private final StringRedisTemplate redis;
@@ -73,7 +90,7 @@ public class LoginRateLimiter {
     }
 
     public void consumeIpToken(String ipAddress) {
-        long retryAfter = execute(CONSUME_IP_TOKEN, "bugnest:login:ip:" + hmac(ipAddress), "30", "0.0005");
+        long retryAfter = execute(CONSUME_IP_TOKEN, List.of("bugnest:login:ip:" + hmac(ipAddress)), "30", "0.0005");
         if (retryAfter > 0) {
             throw new LoginRateLimitedException(retryAfter);
         }
@@ -87,28 +104,40 @@ public class LoginRateLimiter {
         return "bugnest:login:unknown:" + hmac(normalizedIdentifier);
     }
 
-    public void checkAccount(String accountKey) {
-        long retryAfter = execute(ACCOUNT_RETRY_AFTER, accountKey);
+    public String acquireAccount(String accountKey) {
+        String owner = UUID.randomUUID().toString();
+        long retryAfter = execute(ACQUIRE_ACCOUNT, leaseKeys(accountKey), owner);
         if (retryAfter > 0) {
             throw new LoginRateLimitedException(retryAfter);
         }
+        return owner;
     }
 
-    public void recordFailure(String accountKey) {
-        execute(RECORD_FAILURE, accountKey);
+    public void recordFailure(String accountKey, String owner) {
+        requireOwner(execute(RECORD_FAILURE, leaseKeys(accountKey), owner));
     }
 
-    public void recordSuccess(String accountKey) {
-        try {
-            redis.delete(accountKey);
-        } catch (DataAccessException exception) {
-            throw new LoginRateLimitUnavailableException(exception);
+    public void recordSuccess(String accountKey, String owner) {
+        requireOwner(execute(RECORD_SUCCESS, leaseKeys(accountKey), owner));
+    }
+
+    public void releaseAccount(String accountKey, String owner) {
+        execute(RELEASE_ACCOUNT, leaseKeys(accountKey), owner);
+    }
+
+    private List<String> leaseKeys(String accountKey) {
+        return List.of(accountKey, accountKey + ":inflight");
+    }
+
+    private void requireOwner(long result) {
+        if (result < 0) {
+            throw new LoginRateLimitUnavailableException(new IllegalStateException("Authentication lease expired"));
         }
     }
 
-    private long execute(DefaultRedisScript<Long> script, String key, String... arguments) {
+    private long execute(DefaultRedisScript<Long> script, List<String> keys, String... arguments) {
         try {
-            Long result = redis.execute(script, List.of(key), (Object[]) arguments);
+            Long result = redis.execute(script, keys, (Object[]) arguments);
             if (result == null) {
                 throw new IllegalStateException("Redis rate-limit script returned no result");
             }

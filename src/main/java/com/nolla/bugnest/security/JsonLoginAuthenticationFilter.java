@@ -59,7 +59,7 @@ public class JsonLoginAuthenticationFilter extends AbstractAuthenticationProcess
         if (loginRequest == null
                 || loginRequest.identifier() == null || loginRequest.identifier().isBlank()
                 || loginRequest.identifier().length() > 254
-                || loginRequest.password() == null
+                || loginRequest.password() == null || loginRequest.password().isEmpty()
                 || loginRequest.password().codePointCount(0, loginRequest.password().length()) > 1024) {
             throw new InvalidLoginRequestException("Identifier and password are required");
         }

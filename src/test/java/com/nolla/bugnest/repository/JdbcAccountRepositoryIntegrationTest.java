@@ -39,4 +39,10 @@ class JdbcAccountRepositoryIntegrationTest {
         assertEquals("李四", updated.getNickname());
         assertEquals("zhang_san", updated.getUserName());
     }
+
+    @Test
+    void normalizedEmailLookupMatchesTheCaseInsensitiveIndexSemantics() {
+        Account saved = accountRepository.save(new Account("mixed_email", " Mixed@Example.com ", "argon2-hash", "测试"));
+        assertEquals(saved.getId(), accountRepository.findByEmail("mixed@example.com").orElseThrow().getId());
+    }
 }

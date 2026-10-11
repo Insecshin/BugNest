@@ -7,6 +7,9 @@ import com.nolla.bugnest.security.JsonLoginAuthenticationFilter;
 import com.nolla.bugnest.security.JsonLoginFailureHandler;
 import com.nolla.bugnest.security.JsonLoginSuccessHandler;
 import com.nolla.bugnest.security.LoginRateLimiter;
+import com.nolla.bugnest.security.DependencyUnavailableFilter;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
+import org.springframework.session.web.http.SessionRepositoryFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -34,6 +37,15 @@ import java.util.List;
 
 @Configuration(proxyBeanMethods = false)
 public class WebSecurityConfiguration {
+    @Bean
+    FilterRegistrationBean<DependencyUnavailableFilter> dependencyUnavailableFilter(JsonLoginFailureHandler handler) {
+        FilterRegistrationBean<DependencyUnavailableFilter> registration =
+                new FilterRegistrationBean<>(new DependencyUnavailableFilter(handler));
+        registration.setOrder(SessionRepositoryFilter.DEFAULT_ORDER - 1);
+        registration.addUrlPatterns("/auth/*", "/accounts/*", "/api/*");
+        return registration;
+    }
+
     @Bean
     AuthenticationManager authenticationManager(AccountAuthenticationProvider provider) {
         return new ProviderManager(provider);

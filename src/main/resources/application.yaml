@@ -1,6 +1,17 @@
 spring:
   application:
     name: bugnest
+  datasource:
+    hikari:
+      connection-timeout: 2000
+      validation-timeout: 1000
+      data-source-properties:
+        connectTimeout: 2
+        socketTimeout: 2
+        cancelSignalTimeout: 1
+  jdbc:
+    template:
+      query-timeout: 2s
   session:
     timeout: 30m
     redis:

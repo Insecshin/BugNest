@@ -35,7 +35,7 @@ public class JsonLoginFailureHandler implements AuthenticationFailureHandler {
             write(response, 429,
                     "RATE_LIMITED", "请求过于频繁，请稍后重试");
         } else if (exception instanceof LoginRateLimitUnavailableException) {
-            logger.error("Login rate limiting is unavailable", exception);
+            logger.error("Authentication dependency or lease is unavailable", exception);
             write(response, HttpServletResponse.SC_SERVICE_UNAVAILABLE,
                     "AUTHENTICATION_UNAVAILABLE", "登录服务暂不可用");
         } else if (exception instanceof InvalidLoginRequestException) {

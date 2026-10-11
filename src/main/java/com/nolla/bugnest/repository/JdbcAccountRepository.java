@@ -61,7 +61,7 @@ public class JdbcAccountRepository implements AccountRepository {
     @Override
     public Optional<Account> findByEmail(String email) {
         return jdbcTemplate.query(
-                "SELECT " + ACCOUNT_COLUMNS + " FROM public.app_users WHERE email = ?",
+                "SELECT " + ACCOUNT_COLUMNS + " FROM public.app_users WHERE lower(btrim(email)) = ?",
                 ACCOUNT_ROW_MAPPER,
                 email
         ).stream().findFirst();

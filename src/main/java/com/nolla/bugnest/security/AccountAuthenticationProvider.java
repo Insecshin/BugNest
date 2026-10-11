@@ -95,47 +95,30 @@ public class AccountAuthenticationProvider implements AuthenticationProvider {
         String rateLimitKey = account.map(value -> rateLimiter.accountKey(value.getId()))
                 .orElseGet(() -> rateLimiter.unknownIdentifierKey(identifier));
 
-        // 先检查账户是否正在冷却中。若在冷却期，直接拒绝，避免继续做耗时的 Argon2 校验。
-        rateLimiter.checkAccount(rateLimitKey);
-
-        // 真实账户使用数据库中的密码哈希；账户不存在则使用 dummy 哈希。
-        // map(Account::getPasswordHash) 是方法引用，等价于 map(value -> value.getPasswordHash())。
-        // orElse(...) 在 Optional 为空时提供备用值。
-        String passwordHash = account.map(Account::getPasswordHash).orElse(dummyPasswordHash);
-
-        // matches(用户输入的密码, 已保存的哈希) 会按哈希自身携带的参数重新计算并比较。
-        // 不能把密码和哈希直接做字符串相等比较，因为 Argon2 哈希包含随机盐。
-        // 这一行无论账户是否存在都会执行；未知账户比较的是 dummyPasswordHash。
-        boolean matches = passwordEncoder.matches(password, passwordHash);
-
-        // || 是“或”：账户不存在，或者密码不匹配，都进入同一个失败分支。
-        // 对外统一抛 BadCredentialsException，避免告诉调用者到底是账户不存在还是密码错误。
-        if (account.isEmpty() || !matches) {
-            // 记录一次失败；真实账户按账户 ID 计数，未知标识按 HMAC 键计数。
-            rateLimiter.recordFailure(rateLimitKey);
-            // Spring Security 会把该异常交给登录失败处理器，最终返回统一的 401 响应。
-            throw new BadCredentialsException("Invalid username or password");
+        String owner = rateLimiter.acquireAccount(rateLimitKey);
+        try {
+            String passwordHash = account.map(Account::getPasswordHash).orElse(dummyPasswordHash);
+            boolean matches = passwordEncoder.matches(password, passwordHash);
+            if (account.isEmpty() || !matches) {
+                rateLimiter.recordFailure(rateLimitKey, owner);
+                throw new BadCredentialsException("Invalid username or password");
+            }
+            rateLimiter.recordSuccess(rateLimitKey, owner);
+            Account value = account.orElseThrow();
+            return UsernamePasswordAuthenticationToken.authenticated(
+                    new AccountPrincipal(value.getId(), value.getUserName(), value.getNickname()),
+                    null,
+                    AuthorityUtils.NO_AUTHORITIES
+            );
+        } catch (RuntimeException | Error failure) {
+            try {
+                rateLimiter.releaseAccount(rateLimitKey, owner);
+            } catch (RuntimeException cleanupFailure) {
+                failure.addSuppressed(cleanupFailure);
+            }
+            throw failure;
         }
-
-        // 到这里表示账户存在且密码正确。成功登录清除此前连续失败/冷却状态。
-        rateLimiter.recordSuccess(rateLimitKey);
-
-        // 因为上面的失败分支已经处理了 Optional 为空的情况，此处一定能取到账户。
-        // orElseThrow() 在“本应有值但实际没有”时抛异常，避免静默产生错误认证结果。
-        Account value = account.orElseThrow();
-
-        // 创建 Spring Security 认可的“已认证” Token：
-        // - principal：当前用户身份，只放 ID、用户名、昵称，不放邮箱或密码哈希；
-        // - credentials：传 null，认证成功后不再保留密码；
-        // - authorities：当前项目没有角色/权限体系，因此是空集合。
-        // authenticated(...) 创建的 Token 已标记为认证成功，供过滤器保存进 SecurityContext。
-        return UsernamePasswordAuthenticationToken.authenticated(
-                new AccountPrincipal(value.getId(), value.getUserName(), value.getNickname()),
-                null,
-                AuthorityUtils.NO_AUTHORITIES
-        );
     }
-
     /**
      * Spring Security 会用这个方法询问：“本 Provider 能不能处理这种认证对象？”
      * 只接受 UsernamePasswordAuthenticationToken 本身或它的子类。
