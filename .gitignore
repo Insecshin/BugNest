@@ -32,8 +32,25 @@ build/
 ### VS Code ###
 .vscode/
 
-# Local database credentials
+# Local credentials and private keys
 .env
+.env.*
+!.env.example
+.npmrc
+.netrc
+.pypirc
+*.key
+*.pem
+*.p12
+*.pfx
+*.jks
+*.keystore
+
+# Runtime logs and memory dumps can contain credentials
+*.log
+*.hprof
+
+# Test sources and documents are versioned: src/test/, frontend/tests/, 提测文档/.
 
 # Frontend dependencies and generated assets
 frontend/node_modules/

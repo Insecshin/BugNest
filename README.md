@@ -76,6 +76,10 @@ npm audit
 
 完整数据库与 Redis 集成测试需要已运行的 Docker，使用 Testcontainers，不连接开发机数据库。
 
+测试源码（`src/test/`、`frontend/tests/`）随代码保存在 `main`。提测文档仅保存在 [`codex/test-docs` 分支的 `提测文档/` 目录](https://github.com/Insecshin/BugNest/tree/codex/test-docs/提测文档)，`main` 不保存该目录。
+
+测试源码和提测文档不通过 `.gitignore` 隐藏。`.gitignore` 排除本地环境凭据、私钥与密钥库、运行日志、内存转储和既有构建/编辑器产物；`.env.example` 配置模板保留。已被 Git 跟踪的文件不会因新增忽略规则而自动停止上传。
+
 无 Docker 时可单独验证其余测试（不代表完整集成测试通过）：
 
 ```powershell
