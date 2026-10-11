@@ -4,7 +4,7 @@ import { useRoute, useRouter } from 'vue-router'
 import { ElInput, ElButton, ElForm, ElFormItem } from 'element-plus'
 import AppIcon from '../components/AppIcon.vue'
 import { api, ApiError } from '../api'
-import { account, sessionError } from '../session'
+import { setAccount } from '../session'
 import { validateNickname, validatePassword } from '../validation'
 
 const route = useRoute()
@@ -58,8 +58,7 @@ async function submit() {
       created.value = true
       form.password = ''; form.confirmPassword = ''
     } else {
-      account.value = await api.login(form.identifier.trim(), form.password)
-      sessionError.value = ''
+      setAccount(await api.login(form.identifier.trim(), form.password))
       form.password = ''
       await router.push('/')
     }

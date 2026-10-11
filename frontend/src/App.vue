@@ -4,7 +4,7 @@ import { useRoute, useRouter } from 'vue-router'
 import { ElButton, ElMessage } from 'element-plus'
 import AppIcon from './components/AppIcon.vue'
 import { api } from './api'
-import { account, restoreSession, sessionLoading } from './session'
+import { account, restoreSession, sessionLoading, setAccount } from './session'
 
 const route = useRoute()
 const router = useRouter()
@@ -18,7 +18,7 @@ async function logout() {
   loggingOut.value = true
   try {
     await api.logout()
-    account.value = null
+    setAccount(null)
     mobileMenu.value = false
     await router.push('/login')
     ElMessage.success('已安全退出登录')

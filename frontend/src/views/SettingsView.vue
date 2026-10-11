@@ -3,7 +3,7 @@ import { ref, watch } from 'vue'
 import { ElButton, ElInput, ElForm, ElFormItem, ElMessage } from 'element-plus'
 import AppIcon from '../components/AppIcon.vue'
 import { api, ApiError } from '../api'
-import { account, sessionLoading, sessionError, restoreSession } from '../session'
+import { account, sessionLoading, sessionError, restoreSession, setAccount } from '../session'
 import { validateNickname } from '../validation'
 
 const nickname = ref('')
@@ -17,11 +17,11 @@ async function save() {
   busy.value = true
   try {
     await api.updateNickname(account.value.userId, nickname.value)
-    account.value = { ...account.value, nickname: nickname.value.trim() }
+    setAccount({ ...account.value, nickname: nickname.value.trim() })
     ElMessage.success('昵称已更新')
   } catch (e) {
     error.value = e instanceof Error ? e.message : '保存失败，请重试'
-    if (e instanceof ApiError && e.status === 401) account.value = null
+    if (e instanceof ApiError && e.status === 401) setAccount(null)
   } finally { busy.value = false }
 }
 </script>

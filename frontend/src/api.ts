@@ -26,13 +26,18 @@ const messages: Record<string, string> = {
 
 async function request<T>(path: string, init: RequestInit = {}): Promise<T> {
   let response: Response
+  let body: string
+  const signal = init.signal ?? AbortSignal.timeout(8000)
   try {
-    response = await fetch(path, { ...init, credentials: 'same-origin' })
+    signal.throwIfAborted()
+    response = await fetch(path, { ...init, signal, credentials: 'same-origin' })
+    body = await response.text()
   } catch (error) {
+    if (signal.aborted && signal.reason?.name === 'TimeoutError') throw new ApiError('请求超时，请稍后重试', 0)
+    if (signal.aborted) throw error
     if (error instanceof Error && error.name === 'AbortError') throw error
     throw new ApiError('暂时无法连接服务，请确认后端已启动后重试', 0)
   }
-  const body = await response.text()
   let data: unknown = body
   try { data = body ? JSON.parse(body) : undefined } catch { /* Business errors can be plain text. */ }
   if (!response.ok) {
@@ -51,6 +56,8 @@ async function request<T>(path: string, init: RequestInit = {}): Promise<T> {
 
 // Fetch a fresh token for each mutation: login and logout rotate the CSRF session.
 async function mutate<T>(path: string, method: string, body?: unknown, signal?: AbortSignal): Promise<T> {
+  const timeout = AbortSignal.timeout(8000)
+  signal = signal ? AbortSignal.any([signal, timeout]) : timeout
   const csrf = await request<{ headerName: string; token: string }>('/auth/csrf', { signal })
   return request<T>(path, {
     method, signal,

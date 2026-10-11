@@ -66,3 +66,62 @@ test('nickname validation matches the Unicode length boundary on the server', ()
   assert.match(validateNickname('😀'.repeat(51)), /50/)
   assert.match(validateNickname('   '), /1–50/)
 })
+
+function waitForAbort(signal) {
+  return new Promise((_, reject) => signal.addEventListener('abort', () => reject(signal.reason), { once: true }))
+}
+
+test('request timeout reports a Chinese error and does not retry', async t => {
+  const controller = new AbortController()
+  t.mock.method(AbortSignal, 'timeout', ms => { assert.equal(ms, 8000); return controller.signal })
+  let calls = 0
+  globalThis.fetch = async (_, init) => { calls++; return waitForAbort(init.signal) }
+  const pending = api.me()
+  controller.abort(new DOMException('Timed out', 'TimeoutError'))
+  await assert.rejects(pending, e => e instanceof ApiError && e.status === 0 && /请求超时/.test(e.message))
+  assert.equal(calls, 1)
+})
+
+test('timeout also covers reading the response body', async t => {
+  const controller = new AbortController()
+  t.mock.method(AbortSignal, 'timeout', () => controller.signal)
+  let bodyStarted
+  const ready = new Promise(resolve => { bodyStarted = resolve })
+  globalThis.fetch = async (_, init) => ({ text: () => { bodyStarted(); return waitForAbort(init.signal) } })
+  const pending = api.me()
+  await ready
+  controller.abort(new DOMException('Timed out', 'TimeoutError'))
+  await assert.rejects(pending, /请求超时/)
+})
+
+test('CSRF and write share one timeout budget and caller cancellation is preserved', async t => {
+  const timeout = new AbortController()
+  const caller = new AbortController()
+  t.mock.method(AbortSignal, 'timeout', () => timeout.signal)
+  const signals = []
+  let writeStarted
+  const ready = new Promise(resolve => { writeStarted = resolve })
+  globalThis.fetch = async (path, init) => {
+    signals.push(init.signal)
+    if (path === '/auth/csrf') return Response.json({ headerName: 'X-CSRF-TOKEN', token: 'csrf' })
+    writeStarted()
+    return waitForAbort(init.signal)
+  }
+  const pending = api.previewUsername('昵称', '', caller.signal)
+  await ready
+  assert.equal(signals[0], signals[1])
+  caller.abort()
+  await assert.rejects(pending, e => e.name === 'AbortError')
+  assert.equal(signals.length, 2)
+})
+
+test('a timeout during CSRF bootstrap prevents the write', async t => {
+  const controller = new AbortController()
+  t.mock.method(AbortSignal, 'timeout', () => controller.signal)
+  const calls = []
+  globalThis.fetch = async (path, init) => { calls.push(path); return waitForAbort(init.signal) }
+  const pending = api.login('user', 'secret')
+  controller.abort(new DOMException('Timed out', 'TimeoutError'))
+  await assert.rejects(pending, /请求超时/)
+  assert.deepEqual(calls, ['/auth/csrf'])
+})
