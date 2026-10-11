@@ -28,6 +28,7 @@
 	</scm>
 	<properties>
 		<java.version>21</java.version>
+		<npm.executable>npm</npm.executable>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -116,10 +117,55 @@
 	<build>
 		<plugins>
 			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>3.6.3</version>
+				<configuration>
+					<workingDirectory>${project.basedir}/frontend</workingDirectory>
+					<executable>${npm.executable}</executable>
+				</configuration>
+				<executions>
+					<execution>
+						<id>install-frontend</id>
+						<phase>prepare-package</phase>
+						<goals><goal>exec</goal></goals>
+						<configuration><arguments><argument>ci</argument></arguments></configuration>
+					</execution>
+					<execution>
+						<id>build-frontend</id>
+						<phase>prepare-package</phase>
+						<goals><goal>exec</goal></goals>
+						<configuration><arguments><argument>run</argument><argument>build</argument></arguments></configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>package-frontend</id>
+						<phase>prepare-package</phase>
+						<goals><goal>copy-resources</goal></goals>
+						<configuration>
+							<outputDirectory>${project.build.outputDirectory}/static</outputDirectory>
+							<resources><resource><directory>frontend/dist</directory><filtering>false</filtering></resource></resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
 	</build>
+	<profiles>
+		<profile>
+			<id>windows</id>
+			<activation><os><family>Windows</family></os></activation>
+			<properties><npm.executable>npm.cmd</npm.executable></properties>
+		</profile>
+	</profiles>
 
 </project>

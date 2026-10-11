@@ -19,7 +19,16 @@ BugNest 是一个轻量级缺陷管理平台，当前处于开发阶段。项目
 - Spring Boot 4.x（当前基线 4.1.1；升级时使用官方最新稳定且兼容的版本）
 - Maven（使用 Maven Wrapper）
 - Spring Web MVC
+- 前端：Vue 3 + TypeScript + Vite
+- 前端路由使用 Vue Router；UI 组件使用 Element Plus；仅在确有跨页面共享状态时使用 Pinia
 - 测试：Spring Boot Test / JUnit
+
+### 前端集成约定
+
+- Vite 用于前端开发和生产构建；开发时通过 Vite 代理将 `/auth`、`/accounts`、`/api` 请求转发到 Spring Boot。
+- 生产构建产物随 Spring Boot JAR 发布，由同一应用提供前端页面和 REST API；不要求单独部署静态网站服务。
+- 浏览器请求使用 Fetch API 和同源相对路径，沿用服务器 Session Cookie；状态变更请求先按接口约定获取并提交 CSRF token，不在 `localStorage` 保存会话凭据。
+- 客户端路由需支持直接访问和刷新；前端入口及构建资源允许匿名读取，API 仍由 Spring Security 按接口规则保护。
 
 ### 技术选型与企业工程标准
 
