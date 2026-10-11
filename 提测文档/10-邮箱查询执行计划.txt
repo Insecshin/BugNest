@@ -1,0 +1,19 @@
+INSERT 0 100000
+ANALYZE
+ count  
+--------
+ 100010
+(1 row)
+
+                                                              QUERY PLAN                                                              
+--------------------------------------------------------------------------------------------------------------------------------------
+ Index Scan using uq_app_users_email_ci on app_users  (cost=0.42..8.44 rows=1 width=169) (actual time=0.010..0.010 rows=1.00 loops=1)
+   Index Cond: (lower(btrim((email)::text)) = 'fixture_99999@example.invalid'::text)
+   Index Searches: 1
+   Buffers: shared hit=4
+ Planning:
+   Buffers: shared hit=20
+ Planning Time: 0.110 ms
+ Execution Time: 0.024 ms
+(8 rows)
+

@@ -1,0 +1,336 @@
+{
+  "failures": 0,
+  "tests": [
+    {
+      "suite": "com.nolla.bugnest.controller.AccountControllerTest",
+      "name": "shouldReturnOnlyCreatedUserId",
+      "seconds": 0.47,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.controller.FrontendSecurityTest",
+      "name": "logoutRequiresCsrfAndInvalidatesTheServerSession",
+      "seconds": 0.514,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.controller.FrontendSecurityTest",
+      "name": "frontendRoutesArePublicAndForwardToTheEntryWithoutOpeningApis",
+      "seconds": 0.049,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.controller.FrontendSecurityTest",
+      "name": "currentAccountReadsTheAuthenticatedIdAndReturnsOnlyPublicFields",
+      "seconds": 0.162,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.FlywayPostgresIntegrationTest",
+      "name": "shouldApplyFlywayMigrationToPostgres",
+      "seconds": 0.158,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.PingControllerTest",
+      "name": "pingReturnExpectedData",
+      "seconds": 0.002,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.PingControllerTest",
+      "name": "addTwoNumbers",
+      "seconds": 0.001,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.repository.JdbcAccountRepositoryIntegrationTest",
+      "name": "shouldSaveFindAndUpdateAccount",
+      "seconds": 0.05,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.repository.JdbcAccountRepositoryIntegrationTest",
+      "name": "normalizedEmailLookupMatchesTheCaseInsensitiveIndexSemantics",
+      "seconds": 0.008,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.repository.MemoryUserRepositoryTest",
+      "name": "shouldFindAllUsers",
+      "seconds": 0.003,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.repository.MemoryUserRepositoryTest",
+      "name": "shouldFindUserAfterSaving",
+      "seconds": 0.0,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.repository.MemoryUserRepositoryTest",
+      "name": "shouldDeleteUserById",
+      "seconds": 0.001,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.security.ClientIpResolverTest",
+      "name": "walksForwardedChainFromNearestTrustedProxy",
+      "seconds": 0.001,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.security.ClientIpResolverTest",
+      "name": "ignoresForwardedHeadersFromUntrustedPeers",
+      "seconds": 0.001,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.security.DependencyUnavailableFilterTest",
+      "name": "aSessionSaveFailureReplacesBufferedSuccessAndRemovesItsCookie",
+      "seconds": 0.01,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.security.DependencyUnavailableFilterTest",
+      "name": "successfulResponsesAreCopiedUnchanged",
+      "seconds": 0.001,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.security.DependencyUnavailableFilterTest",
+      "name": "wrappedTimeoutIsUnavailableButProgrammingErrorsAreNotHidden",
+      "seconds": 0.003,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.security.JsonLoginAuthenticationFilterTest",
+      "name": "spacesArePreservedAndPassedToAuthentication",
+      "seconds": 0.009,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.security.JsonLoginAuthenticationFilterTest",
+      "name": "emptyPasswordReturnsBadRequestWithoutAuthentication",
+      "seconds": 0.009,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.security.JsonLoginFailureHandlerTest",
+      "name": "returnsGenericServiceUnavailableWhenRedisIsDown",
+      "seconds": 0.002,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.security.LoginDependencyIntegrationTest",
+      "name": "sessionPersistenceTimeoutCannotReturnLoginSuccess",
+      "seconds": 5.025,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.security.LoginDependencyIntegrationTest",
+      "name": "anUnresponsiveDatabaseAlsoTimesOutAs503",
+      "seconds": 3.203,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.security.LoginDependencyIntegrationTest",
+      "name": "stoppedDependenciesReturn503WithinFiveSecondsAndRecover",
+      "seconds": 2.214,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.security.LoginSecurityIntegrationTest",
+      "name": "leaseOwnershipFencesExpiredRequestsAndLeavesNewOwnersIntact",
+      "seconds": 0.082,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.security.LoginSecurityIntegrationTest",
+      "name": "unknownAccountAndWrongPasswordHaveTheSameUnauthorizedResponse",
+      "seconds": 0.151,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.security.LoginSecurityIntegrationTest",
+      "name": "expiredVerificationCannotAuthenticateOrReleaseAReplacementLease",
+      "seconds": 0.031,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.security.LoginSecurityIntegrationTest",
+      "name": "overlappingAliasesAreRejectedWhileDifferentAccountsCanVerifyTogether",
+      "seconds": 0.085,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.security.LoginSecurityIntegrationTest",
+      "name": "fifteenMinuteCooldownEndsAndSuccessfulLoginClearsTheFailureHistory",
+      "seconds": 0.086,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.security.LoginSecurityIntegrationTest",
+      "name": "loginByEmailAndUsernameReturnsOnlyPublicFieldsAndPersistsSession",
+      "seconds": 0.139,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.security.LoginSecurityIntegrationTest",
+      "name": "unexpectedVerificationFailureReleasesTheLeaseWithoutHidingTheBug",
+      "seconds": 0.024,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.security.LoginSecurityIntegrationTest",
+      "name": "redisScriptsEnforceIpBucketAndAccountBackoffWithoutExtendingCooldown",
+      "seconds": 0.058,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.security.LoginSecurityIntegrationTest",
+      "name": "emailAndUsernameShareTheSameAccountFailureCooldown",
+      "seconds": 0.174,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.security.LoginSecurityIntegrationTest",
+      "name": "csrfIsRequiredForLoginAndRegistration",
+      "seconds": 0.043,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.service.AccountServiceTest",
+      "name": "shouldPreviewExplicitUsernameAvailability",
+      "seconds": 0.001,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.service.AccountServiceTest",
+      "name": "currentAccountUsesTheLatestNicknameAndOnlyPublicFields",
+      "seconds": 0.001,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.service.AccountServiceTest",
+      "name": "shouldRetryGeneratedUsernameWhenInsertLosesRace",
+      "seconds": 0.003,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.service.AccountServiceTest",
+      "name": "shouldCreateAccountWithGeneratedUsernameAndHashedPassword",
+      "seconds": 0.0,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.service.AccountServiceTest",
+      "name": "shouldRejectDuplicateExplicitUsername",
+      "seconds": 0.001,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.service.PasswordPolicyTest",
+      "name": "shouldNormalizeUnicodeBeforeReturningPassword",
+      "seconds": 0.001,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.service.PasswordPolicyTest",
+      "name": "shouldRejectBlockedPassword",
+      "seconds": 0.002,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.service.PasswordPolicyTest",
+      "name": "shouldRejectMismatchedPassword",
+      "seconds": 0.001,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.service.PasswordPolicyTest",
+      "name": "shouldRejectShortPassword",
+      "seconds": 0.001,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.service.UsernameGeneratorTest",
+      "name": "shouldUseFallbackWhenNicknameHasNoTransliteratableCharacters",
+      "seconds": 0.002,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.service.UsernameGeneratorTest",
+      "name": "shouldTransliterateDifferentScriptsToAsciiUsernameBase",
+      "seconds": 0.021,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.service.UserServiceTest",
+      "name": "shouldRejectNullUsername",
+      "seconds": 0.004,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.service.UserServiceTest",
+      "name": "shouldThrowWhenUserDoesNotExist",
+      "seconds": 0.002,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.service.UserServiceTest",
+      "name": "shouldRejectEmptyUsername",
+      "seconds": 0.002,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.service.UserServiceTest",
+      "name": "shouldThrowWhenUpdatingNonexistentUser",
+      "seconds": 0.003,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.service.UserServiceTest",
+      "name": "shouldThrowWhenDeletingNonExistingUser",
+      "seconds": 0.003,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.service.UserServiceTest",
+      "name": "shouldDeleteExistingUser",
+      "seconds": 0.002,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.service.UserServiceTest",
+      "name": "shouldUpdateExistingUser",
+      "seconds": 0.004,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.service.UserServiceTest",
+      "name": "shouldCreateUserWithValidUsername",
+      "seconds": 0.001,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.service.UserServiceTest",
+      "name": "shouldRejectBlankUsername",
+      "seconds": 0.008,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.service.UserServiceTest",
+      "name": "shouldGetExistingUser",
+      "seconds": 0.001,
+      "passed": true
+    },
+    {
+      "suite": "com.nolla.bugnest.service.UserServiceTest",
+      "name": "shouldRejectBlankUsernameWhenUpdatingUser",
+      "seconds": 0.003,
+      "passed": true
+    }
+  ],
+  "count": 55
+}

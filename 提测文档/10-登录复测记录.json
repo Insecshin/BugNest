@@ -1,0 +1,5212 @@
+{
+  "scale": {
+    "runId": "5013fee959",
+    "baseUrl": "https://localhost:5173",
+    "runner": "Postman CLI contract checks and Node standard HTTP concurrency",
+    "mode": "scale",
+    "runs": [
+      {
+        "scenario": "setup",
+        "exitCode": 0,
+        "metrics": 20
+      },
+      {
+        "scenario": "baseline",
+        "exitCode": 0,
+        "metrics": 6
+      },
+      {
+        "scenario": "large-db-burst",
+        "exitCode": 0,
+        "metrics": 60,
+        "runner": "Node standard HTTP client"
+      }
+    ],
+    "summary": {
+      "setup": {
+        "samples": 0,
+        "statuses": {},
+        "contractFailures": 0,
+        "avgMs": null,
+        "p95Ms": null,
+        "maxMs": null,
+        "sendSpreadMs": null
+      },
+      "baseline": {
+        "samples": 1,
+        "statuses": {
+          "200": 1
+        },
+        "contractFailures": 0,
+        "avgMs": 65,
+        "p95Ms": 65,
+        "maxMs": 65,
+        "sendSpreadMs": 0
+      },
+      "large-db-burst": {
+        "samples": 10,
+        "statuses": {
+          "200": 10
+        },
+        "contractFailures": 0,
+        "avgMs": 164,
+        "p95Ms": 170.91,
+        "maxMs": 170.91,
+        "sendSpreadMs": 4
+      }
+    },
+    "metrics": [
+      {
+        "scenario": "setup",
+        "stage": "setup-csrf",
+        "status": 200,
+        "ms": 17,
+        "sentAt": 1791724118825,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "setup",
+        "stage": "signup",
+        "status": 201,
+        "ms": 66,
+        "sentAt": 1791724118901,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100011
+      },
+      {
+        "scenario": "setup",
+        "stage": "setup-csrf",
+        "status": 200,
+        "ms": 11,
+        "sentAt": 1791724119043,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100011
+      },
+      {
+        "scenario": "setup",
+        "stage": "signup",
+        "status": 201,
+        "ms": 60,
+        "sentAt": 1791724119132,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100012
+      },
+      {
+        "scenario": "setup",
+        "stage": "setup-csrf",
+        "status": 200,
+        "ms": 11,
+        "sentAt": 1791724119274,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100012
+      },
+      {
+        "scenario": "setup",
+        "stage": "signup",
+        "status": 201,
+        "ms": 59,
+        "sentAt": 1791724119366,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100013
+      },
+      {
+        "scenario": "setup",
+        "stage": "setup-csrf",
+        "status": 200,
+        "ms": 12,
+        "sentAt": 1791724119491,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100013
+      },
+      {
+        "scenario": "setup",
+        "stage": "signup",
+        "status": 201,
+        "ms": 62,
+        "sentAt": 1791724119581,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100014
+      },
+      {
+        "scenario": "setup",
+        "stage": "setup-csrf",
+        "status": 200,
+        "ms": 10,
+        "sentAt": 1791724119707,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100014
+      },
+      {
+        "scenario": "setup",
+        "stage": "signup",
+        "status": 201,
+        "ms": 60,
+        "sentAt": 1791724119798,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100015
+      },
+      {
+        "scenario": "setup",
+        "stage": "setup-csrf",
+        "status": 200,
+        "ms": 11,
+        "sentAt": 1791724119941,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100015
+      },
+      {
+        "scenario": "setup",
+        "stage": "signup",
+        "status": 201,
+        "ms": 59,
+        "sentAt": 1791724120032,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100016
+      },
+      {
+        "scenario": "setup",
+        "stage": "setup-csrf",
+        "status": 200,
+        "ms": 9,
+        "sentAt": 1791724120171,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100016
+      },
+      {
+        "scenario": "setup",
+        "stage": "signup",
+        "status": 201,
+        "ms": 60,
+        "sentAt": 1791724120249,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100017
+      },
+      {
+        "scenario": "setup",
+        "stage": "setup-csrf",
+        "status": 200,
+        "ms": 10,
+        "sentAt": 1791724120393,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100017
+      },
+      {
+        "scenario": "setup",
+        "stage": "signup",
+        "status": 201,
+        "ms": 60,
+        "sentAt": 1791724120497,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100018
+      },
+      {
+        "scenario": "setup",
+        "stage": "setup-csrf",
+        "status": 200,
+        "ms": 9,
+        "sentAt": 1791724120641,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100018
+      },
+      {
+        "scenario": "setup",
+        "stage": "signup",
+        "status": 201,
+        "ms": 58,
+        "sentAt": 1791724120731,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100019
+      },
+      {
+        "scenario": "setup",
+        "stage": "setup-csrf",
+        "status": 200,
+        "ms": 9,
+        "sentAt": 1791724120875,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100019
+      },
+      {
+        "scenario": "setup",
+        "stage": "signup",
+        "status": 201,
+        "ms": 61,
+        "sentAt": 1791724120977,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100020
+      },
+      {
+        "scenario": "baseline",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 16,
+        "sentAt": 1791724123115,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "baseline",
+        "stage": "login",
+        "status": 200,
+        "ms": 65,
+        "sentAt": 1791724123174,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100011
+      },
+      {
+        "scenario": "baseline",
+        "stage": "me",
+        "status": 200,
+        "ms": 16,
+        "sentAt": 1791724123174,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100011
+      },
+      {
+        "scenario": "baseline",
+        "stage": "logout-csrf",
+        "status": 200,
+        "ms": 12,
+        "sentAt": 1791724123174,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100011
+      },
+      {
+        "scenario": "baseline",
+        "stage": "logout",
+        "status": 204,
+        "ms": 11,
+        "sentAt": 1791724123174,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100011
+      },
+      {
+        "scenario": "baseline",
+        "stage": "after-logout",
+        "status": 401,
+        "ms": 9,
+        "sentAt": 1791724123174,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100011
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 34.26,
+        "sentAt": 1791724124586,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 34.32,
+        "sentAt": 1791724124587,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 33.67,
+        "sentAt": 1791724124588,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 36.77,
+        "sentAt": 1791724124585,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 32.21,
+        "sentAt": 1791724124590,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 63.22,
+        "sentAt": 1791724124559,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 33.9,
+        "sentAt": 1791724124589,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 35.69,
+        "sentAt": 1791724124587,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 35.41,
+        "sentAt": 1791724124588,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 37.55,
+        "sentAt": 1791724124586,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "login",
+        "status": 200,
+        "ms": 154.26,
+        "sentAt": 1791724129571,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100020
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "login",
+        "status": 200,
+        "ms": 156.18,
+        "sentAt": 1791724129571,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100019
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "login",
+        "status": 200,
+        "ms": 161.01,
+        "sentAt": 1791724129567,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100011
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "login",
+        "status": 200,
+        "ms": 160,
+        "sentAt": 1791724129571,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100018
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "login",
+        "status": 200,
+        "ms": 165.9,
+        "sentAt": 1791724129568,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100012
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "login",
+        "status": 200,
+        "ms": 165.81,
+        "sentAt": 1791724129570,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100016
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "login",
+        "status": 200,
+        "ms": 167.03,
+        "sentAt": 1791724129569,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100015
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "login",
+        "status": 200,
+        "ms": 166.99,
+        "sentAt": 1791724129570,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100017
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "login",
+        "status": 200,
+        "ms": 170.17,
+        "sentAt": 1791724129569,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100014
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "login",
+        "status": 200,
+        "ms": 170.91,
+        "sentAt": 1791724129569,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100013
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "me",
+        "status": 200,
+        "ms": 25.7,
+        "sentAt": 1791724129729,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100020
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "me",
+        "status": 200,
+        "ms": 25.19,
+        "sentAt": 1791724129729,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100019
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "me",
+        "status": 200,
+        "ms": 31.17,
+        "sentAt": 1791724129732,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100011
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "me",
+        "status": 200,
+        "ms": 37.36,
+        "sentAt": 1791724129738,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100018
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "me",
+        "status": 200,
+        "ms": 31.9,
+        "sentAt": 1791724129744,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100015
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "me",
+        "status": 200,
+        "ms": 32.83,
+        "sentAt": 1791724129743,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100016
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "me",
+        "status": 200,
+        "ms": 35.29,
+        "sentAt": 1791724129741,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100012
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "me",
+        "status": 200,
+        "ms": 35.26,
+        "sentAt": 1791724129744,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100017
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "me",
+        "status": 200,
+        "ms": 33.52,
+        "sentAt": 1791724129746,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100014
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "me",
+        "status": 200,
+        "ms": 34.56,
+        "sentAt": 1791724129747,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100013
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "logout-csrf",
+        "status": 200,
+        "ms": 24.91,
+        "sentAt": 1791724129759,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100020
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "logout-csrf",
+        "status": 200,
+        "ms": 25.67,
+        "sentAt": 1791724129759,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100019
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "logout-csrf",
+        "status": 200,
+        "ms": 21.26,
+        "sentAt": 1791724129764,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100011
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "logout-csrf",
+        "status": 200,
+        "ms": 20.51,
+        "sentAt": 1791724129777,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100018
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "logout-csrf",
+        "status": 200,
+        "ms": 21.54,
+        "sentAt": 1791724129777,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100015
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "logout-csrf",
+        "status": 200,
+        "ms": 22.62,
+        "sentAt": 1791724129778,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100016
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "logout-csrf",
+        "status": 200,
+        "ms": 22.34,
+        "sentAt": 1791724129779,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100012
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "logout",
+        "status": 204,
+        "ms": 22.21,
+        "sentAt": 1791724129791,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100020
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "logout-csrf",
+        "status": 200,
+        "ms": 30.1,
+        "sentAt": 1791724129784,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100017
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "logout-csrf",
+        "status": 200,
+        "ms": 25.48,
+        "sentAt": 1791724129789,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100013
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "logout-csrf",
+        "status": 200,
+        "ms": 31.67,
+        "sentAt": 1791724129786,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100014
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "logout",
+        "status": 204,
+        "ms": 27.65,
+        "sentAt": 1791724129793,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100011
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "logout",
+        "status": 204,
+        "ms": 30.16,
+        "sentAt": 1791724129792,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100019
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "logout",
+        "status": 204,
+        "ms": 25.07,
+        "sentAt": 1791724129802,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100018
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "logout",
+        "status": 204,
+        "ms": 24.8,
+        "sentAt": 1791724129802,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100015
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "logout",
+        "status": 204,
+        "ms": 24.06,
+        "sentAt": 1791724129803,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100016
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "logout",
+        "status": 204,
+        "ms": 25.3,
+        "sentAt": 1791724129805,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100012
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "after-logout",
+        "status": 401,
+        "ms": 22.75,
+        "sentAt": 1791724129815,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100020
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "logout",
+        "status": 204,
+        "ms": 21.49,
+        "sentAt": 1791724129817,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100017
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "logout",
+        "status": 204,
+        "ms": 23.34,
+        "sentAt": 1791724129818,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100013
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "after-logout",
+        "status": 401,
+        "ms": 20.51,
+        "sentAt": 1791724129824,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100011
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "logout",
+        "status": 204,
+        "ms": 22.69,
+        "sentAt": 1791724129823,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100014
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "after-logout",
+        "status": 401,
+        "ms": 23.79,
+        "sentAt": 1791724129828,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100019
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "after-logout",
+        "status": 401,
+        "ms": 22.08,
+        "sentAt": 1791724129832,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100015
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "after-logout",
+        "status": 401,
+        "ms": 23.17,
+        "sentAt": 1791724129832,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100018
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "after-logout",
+        "status": 401,
+        "ms": 21.63,
+        "sentAt": 1791724129834,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100016
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "after-logout",
+        "status": 401,
+        "ms": 21.11,
+        "sentAt": 1791724129837,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100012
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "after-logout",
+        "status": 401,
+        "ms": 12.21,
+        "sentAt": 1791724129849,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100014
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "after-logout",
+        "status": 401,
+        "ms": 15.43,
+        "sentAt": 1791724129846,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100013
+      },
+      {
+        "scenario": "large-db-burst",
+        "stage": "after-logout",
+        "status": 401,
+        "ms": 17.7,
+        "sentAt": 1791724129845,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100017
+      }
+    ]
+  },
+  "full": {
+    "runId": "bec1bb1c67",
+    "baseUrl": "https://localhost:5173",
+    "runner": "Postman CLI contract checks and Node standard HTTP concurrency",
+    "mode": "full",
+    "runs": [
+      {
+        "scenario": "setup",
+        "exitCode": 0,
+        "metrics": 20
+      },
+      {
+        "scenario": "baseline",
+        "exitCode": 0,
+        "metrics": 30
+      },
+      {
+        "scenario": "burst-1",
+        "exitCode": 0,
+        "metrics": 60,
+        "runner": "Node standard HTTP client"
+      },
+      {
+        "scenario": "burst-2",
+        "exitCode": 0,
+        "metrics": 60,
+        "runner": "Node standard HTTP client"
+      },
+      {
+        "scenario": "burst-3",
+        "exitCode": 0,
+        "metrics": 60,
+        "runner": "Node standard HTTP client"
+      },
+      {
+        "scenario": "ip-saturation",
+        "exitCode": 0,
+        "metrics": 110,
+        "runner": "Node standard HTTP client"
+      },
+      {
+        "scenario": "account-cooldown",
+        "exitCode": 0,
+        "metrics": 10
+      },
+      {
+        "scenario": "boundaries",
+        "exitCode": 0,
+        "metrics": 13
+      }
+    ],
+    "summary": {
+      "setup": {
+        "samples": 0,
+        "statuses": {},
+        "contractFailures": 0,
+        "avgMs": null,
+        "p95Ms": null,
+        "maxMs": null,
+        "sendSpreadMs": null
+      },
+      "baseline": {
+        "samples": 5,
+        "statuses": {
+          "200": 5
+        },
+        "contractFailures": 0,
+        "avgMs": 72,
+        "p95Ms": 102,
+        "maxMs": 102,
+        "sendSpreadMs": 2544
+      },
+      "burst-1": {
+        "samples": 10,
+        "statuses": {
+          "200": 10
+        },
+        "contractFailures": 0,
+        "avgMs": 189,
+        "p95Ms": 206.01,
+        "maxMs": 206.01,
+        "sendSpreadMs": 5
+      },
+      "burst-2": {
+        "samples": 10,
+        "statuses": {
+          "200": 10
+        },
+        "contractFailures": 0,
+        "avgMs": 195,
+        "p95Ms": 201.03,
+        "maxMs": 201.03,
+        "sendSpreadMs": 4
+      },
+      "burst-3": {
+        "samples": 10,
+        "statuses": {
+          "200": 10
+        },
+        "contractFailures": 0,
+        "avgMs": 218,
+        "p95Ms": 223.12,
+        "maxMs": 223.12,
+        "sendSpreadMs": 4
+      },
+      "ip-saturation": {
+        "samples": 40,
+        "statuses": {
+          "200": 30,
+          "429": 10
+        },
+        "contractFailures": 0,
+        "avgMs": 117,
+        "p95Ms": 182.01,
+        "maxMs": 183.83,
+        "sendSpreadMs": 700
+      },
+      "account-cooldown": {
+        "samples": 0,
+        "statuses": {},
+        "contractFailures": 0,
+        "avgMs": null,
+        "p95Ms": null,
+        "maxMs": null,
+        "sendSpreadMs": null
+      },
+      "boundaries": {
+        "samples": 1,
+        "statuses": {
+          "403": 1
+        },
+        "contractFailures": 0,
+        "avgMs": 16,
+        "p95Ms": 16,
+        "maxMs": 16,
+        "sendSpreadMs": 0
+      }
+    },
+    "metrics": [
+      {
+        "scenario": "setup",
+        "stage": "setup-csrf",
+        "status": 200,
+        "ms": 446,
+        "sentAt": 1791723856494,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "setup",
+        "stage": "signup",
+        "status": 201,
+        "ms": 108,
+        "sentAt": 1791723857035,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "setup",
+        "stage": "setup-csrf",
+        "status": 200,
+        "ms": 17,
+        "sentAt": 1791723857237,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "setup",
+        "stage": "signup",
+        "status": 201,
+        "ms": 71,
+        "sentAt": 1791723857332,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 2
+      },
+      {
+        "scenario": "setup",
+        "stage": "setup-csrf",
+        "status": 200,
+        "ms": 15,
+        "sentAt": 1791723857482,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 2
+      },
+      {
+        "scenario": "setup",
+        "stage": "signup",
+        "status": 201,
+        "ms": 64,
+        "sentAt": 1791723857587,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 3
+      },
+      {
+        "scenario": "setup",
+        "stage": "setup-csrf",
+        "status": 200,
+        "ms": 13,
+        "sentAt": 1791723857699,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 3
+      },
+      {
+        "scenario": "setup",
+        "stage": "signup",
+        "status": 201,
+        "ms": 63,
+        "sentAt": 1791723857807,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 4
+      },
+      {
+        "scenario": "setup",
+        "stage": "setup-csrf",
+        "status": 200,
+        "ms": 14,
+        "sentAt": 1791723857949,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 4
+      },
+      {
+        "scenario": "setup",
+        "stage": "signup",
+        "status": 201,
+        "ms": 64,
+        "sentAt": 1791723858043,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 5
+      },
+      {
+        "scenario": "setup",
+        "stage": "setup-csrf",
+        "status": 200,
+        "ms": 14,
+        "sentAt": 1791723858166,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 5
+      },
+      {
+        "scenario": "setup",
+        "stage": "signup",
+        "status": 201,
+        "ms": 60,
+        "sentAt": 1791723858260,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 6
+      },
+      {
+        "scenario": "setup",
+        "stage": "setup-csrf",
+        "status": 200,
+        "ms": 13,
+        "sentAt": 1791723858400,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 6
+      },
+      {
+        "scenario": "setup",
+        "stage": "signup",
+        "status": 201,
+        "ms": 63,
+        "sentAt": 1791723858504,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 7
+      },
+      {
+        "scenario": "setup",
+        "stage": "setup-csrf",
+        "status": 200,
+        "ms": 15,
+        "sentAt": 1791723858661,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 7
+      },
+      {
+        "scenario": "setup",
+        "stage": "signup",
+        "status": 201,
+        "ms": 61,
+        "sentAt": 1791723858754,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 8
+      },
+      {
+        "scenario": "setup",
+        "stage": "setup-csrf",
+        "status": 200,
+        "ms": 13,
+        "sentAt": 1791723858895,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 8
+      },
+      {
+        "scenario": "setup",
+        "stage": "signup",
+        "status": 201,
+        "ms": 62,
+        "sentAt": 1791723859000,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 9
+      },
+      {
+        "scenario": "setup",
+        "stage": "setup-csrf",
+        "status": 200,
+        "ms": 15,
+        "sentAt": 1791723859141,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 9
+      },
+      {
+        "scenario": "setup",
+        "stage": "signup",
+        "status": 201,
+        "ms": 64,
+        "sentAt": 1791723859246,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 10
+      },
+      {
+        "scenario": "baseline",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 15,
+        "sentAt": 1791723861451,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "baseline",
+        "stage": "login",
+        "status": 200,
+        "ms": 102,
+        "sentAt": 1791723861506,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "baseline",
+        "stage": "me",
+        "status": 200,
+        "ms": 20,
+        "sentAt": 1791723861506,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "baseline",
+        "stage": "logout-csrf",
+        "status": 200,
+        "ms": 14,
+        "sentAt": 1791723861506,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "baseline",
+        "stage": "logout",
+        "status": 204,
+        "ms": 14,
+        "sentAt": 1791723861506,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "baseline",
+        "stage": "after-logout",
+        "status": 401,
+        "ms": 11,
+        "sentAt": 1791723861506,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "baseline",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 12,
+        "sentAt": 1791723861506,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "baseline",
+        "stage": "login",
+        "status": 200,
+        "ms": 67,
+        "sentAt": 1791723862142,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "baseline",
+        "stage": "me",
+        "status": 200,
+        "ms": 16,
+        "sentAt": 1791723862142,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "baseline",
+        "stage": "logout-csrf",
+        "status": 200,
+        "ms": 12,
+        "sentAt": 1791723862142,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "baseline",
+        "stage": "logout",
+        "status": 204,
+        "ms": 12,
+        "sentAt": 1791723862142,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "baseline",
+        "stage": "after-logout",
+        "status": 401,
+        "ms": 11,
+        "sentAt": 1791723862142,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "baseline",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 11,
+        "sentAt": 1791723862142,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "baseline",
+        "stage": "login",
+        "status": 200,
+        "ms": 69,
+        "sentAt": 1791723862731,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "baseline",
+        "stage": "me",
+        "status": 200,
+        "ms": 15,
+        "sentAt": 1791723862731,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "baseline",
+        "stage": "logout-csrf",
+        "status": 200,
+        "ms": 13,
+        "sentAt": 1791723862731,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "baseline",
+        "stage": "logout",
+        "status": 204,
+        "ms": 14,
+        "sentAt": 1791723862731,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "baseline",
+        "stage": "after-logout",
+        "status": 401,
+        "ms": 9,
+        "sentAt": 1791723862731,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "baseline",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 11,
+        "sentAt": 1791723862731,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "baseline",
+        "stage": "login",
+        "status": 200,
+        "ms": 65,
+        "sentAt": 1791723863384,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "baseline",
+        "stage": "me",
+        "status": 200,
+        "ms": 13,
+        "sentAt": 1791723863384,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "baseline",
+        "stage": "logout-csrf",
+        "status": 200,
+        "ms": 14,
+        "sentAt": 1791723863384,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "baseline",
+        "stage": "logout",
+        "status": 204,
+        "ms": 17,
+        "sentAt": 1791723863384,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "baseline",
+        "stage": "after-logout",
+        "status": 401,
+        "ms": 7,
+        "sentAt": 1791723863384,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "baseline",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 12,
+        "sentAt": 1791723863384,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "baseline",
+        "stage": "login",
+        "status": 200,
+        "ms": 58,
+        "sentAt": 1791723864050,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "baseline",
+        "stage": "me",
+        "status": 200,
+        "ms": 14,
+        "sentAt": 1791723864050,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "baseline",
+        "stage": "logout-csrf",
+        "status": 200,
+        "ms": 13,
+        "sentAt": 1791723864050,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "baseline",
+        "stage": "logout",
+        "status": 204,
+        "ms": 11,
+        "sentAt": 1791723864050,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "baseline",
+        "stage": "after-logout",
+        "status": 401,
+        "ms": 8,
+        "sentAt": 1791723864050,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 36.77,
+        "sentAt": 1791723866386,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 33.82,
+        "sentAt": 1791723866390,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 35.7,
+        "sentAt": 1791723866388,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 37.83,
+        "sentAt": 1791723866386,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 62.78,
+        "sentAt": 1791723866362,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 37.18,
+        "sentAt": 1791723866388,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 36.52,
+        "sentAt": 1791723866389,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 40.57,
+        "sentAt": 1791723866385,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 39.5,
+        "sentAt": 1791723866387,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 39.31,
+        "sentAt": 1791723866387,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "login",
+        "status": 200,
+        "ms": 168.03,
+        "sentAt": 1791723871372,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "login",
+        "status": 200,
+        "ms": 171.55,
+        "sentAt": 1791723871374,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 3
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "login",
+        "status": 200,
+        "ms": 177.94,
+        "sentAt": 1791723871374,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 4
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "login",
+        "status": 200,
+        "ms": 180.11,
+        "sentAt": 1791723871373,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 2
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "login",
+        "status": 200,
+        "ms": 190.16,
+        "sentAt": 1791723871377,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 10
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "me",
+        "status": 200,
+        "ms": 27.8,
+        "sentAt": 1791723871541,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "login",
+        "status": 200,
+        "ms": 195.15,
+        "sentAt": 1791723871375,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 5
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "login",
+        "status": 200,
+        "ms": 199.55,
+        "sentAt": 1791723871375,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 7
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "me",
+        "status": 200,
+        "ms": 28.76,
+        "sentAt": 1791723871547,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 3
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "login",
+        "status": 200,
+        "ms": 202.59,
+        "sentAt": 1791723871376,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 8
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "login",
+        "status": 200,
+        "ms": 202.62,
+        "sentAt": 1791723871376,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 9
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "me",
+        "status": 200,
+        "ms": 25.94,
+        "sentAt": 1791723871554,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 4
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "login",
+        "status": 200,
+        "ms": 206.01,
+        "sentAt": 1791723871375,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 6
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "me",
+        "status": 200,
+        "ms": 24.07,
+        "sentAt": 1791723871558,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 2
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "me",
+        "status": 200,
+        "ms": 32.08,
+        "sentAt": 1791723871571,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 10
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "logout-csrf",
+        "status": 200,
+        "ms": 31.15,
+        "sentAt": 1791723871572,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "me",
+        "status": 200,
+        "ms": 30.37,
+        "sentAt": 1791723871577,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 5
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "logout-csrf",
+        "status": 200,
+        "ms": 30.03,
+        "sentAt": 1791723871588,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 4
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "logout-csrf",
+        "status": 200,
+        "ms": 34.62,
+        "sentAt": 1791723871584,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 3
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "me",
+        "status": 200,
+        "ms": 38.67,
+        "sentAt": 1791723871585,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 8
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "me",
+        "status": 200,
+        "ms": 37.67,
+        "sentAt": 1791723871588,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 6
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "me",
+        "status": 200,
+        "ms": 43.4,
+        "sentAt": 1791723871582,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 7
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "me",
+        "status": 200,
+        "ms": 44.17,
+        "sentAt": 1791723871585,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 9
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "logout-csrf",
+        "status": 200,
+        "ms": 41.37,
+        "sentAt": 1791723871589,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 2
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "logout-csrf",
+        "status": 200,
+        "ms": 31.85,
+        "sentAt": 1791723871604,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 10
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "logout",
+        "status": 204,
+        "ms": 31.63,
+        "sentAt": 1791723871606,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "logout",
+        "status": 204,
+        "ms": 34.7,
+        "sentAt": 1791723871620,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 4
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "logout",
+        "status": 204,
+        "ms": 33.13,
+        "sentAt": 1791723871622,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 3
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "logout-csrf",
+        "status": 200,
+        "ms": 46.07,
+        "sentAt": 1791723871609,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 5
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "logout-csrf",
+        "status": 200,
+        "ms": 39.95,
+        "sentAt": 1791723871631,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 8
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "logout-csrf",
+        "status": 200,
+        "ms": 33.35,
+        "sentAt": 1791723871638,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 9
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "logout-csrf",
+        "status": 200,
+        "ms": 37.71,
+        "sentAt": 1791723871634,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 7
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "logout-csrf",
+        "status": 200,
+        "ms": 40.14,
+        "sentAt": 1791723871632,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 6
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "logout",
+        "status": 204,
+        "ms": 38.32,
+        "sentAt": 1791723871639,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 2
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "after-logout",
+        "status": 401,
+        "ms": 32.48,
+        "sentAt": 1791723871648,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "after-logout",
+        "status": 401,
+        "ms": 23.43,
+        "sentAt": 1791723871657,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 4
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "after-logout",
+        "status": 401,
+        "ms": 22.46,
+        "sentAt": 1791723871659,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 3
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "logout",
+        "status": 204,
+        "ms": 37.11,
+        "sentAt": 1791723871646,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 10
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "logout",
+        "status": 204,
+        "ms": 26.51,
+        "sentAt": 1791723871658,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 5
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "logout",
+        "status": 204,
+        "ms": 22.12,
+        "sentAt": 1791723871673,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 8
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "logout",
+        "status": 204,
+        "ms": 23.82,
+        "sentAt": 1791723871675,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 9
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "logout",
+        "status": 204,
+        "ms": 25.72,
+        "sentAt": 1791723871674,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 7
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "logout",
+        "status": 204,
+        "ms": 27.28,
+        "sentAt": 1791723871678,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 6
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "after-logout",
+        "status": 401,
+        "ms": 22.41,
+        "sentAt": 1791723871686,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 2
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "after-logout",
+        "status": 401,
+        "ms": 19.72,
+        "sentAt": 1791723871689,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 10
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "after-logout",
+        "status": 401,
+        "ms": 20.5,
+        "sentAt": 1791723871689,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 5
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "after-logout",
+        "status": 401,
+        "ms": 18.15,
+        "sentAt": 1791723871697,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 8
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "after-logout",
+        "status": 401,
+        "ms": 15.55,
+        "sentAt": 1791723871701,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 9
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "after-logout",
+        "status": 401,
+        "ms": 15.29,
+        "sentAt": 1791723871702,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 7
+      },
+      {
+        "scenario": "burst-1",
+        "stage": "after-logout",
+        "status": 401,
+        "ms": 13.79,
+        "sentAt": 1791723871707,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 6
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 27.44,
+        "sentAt": 1791723901725,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 27.16,
+        "sentAt": 1791723901726,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 29.33,
+        "sentAt": 1791723901724,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 27.09,
+        "sentAt": 1791723901727,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 26.57,
+        "sentAt": 1791723901727,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 31.68,
+        "sentAt": 1791723901723,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 28.69,
+        "sentAt": 1791723901726,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 30.6,
+        "sentAt": 1791723901724,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 29.96,
+        "sentAt": 1791723901725,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 28.6,
+        "sentAt": 1791723901727,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "login",
+        "status": 200,
+        "ms": 187.82,
+        "sentAt": 1791723906737,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "login",
+        "status": 200,
+        "ms": 186.8,
+        "sentAt": 1791723906740,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 7
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "login",
+        "status": 200,
+        "ms": 187.62,
+        "sentAt": 1791723906740,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 8
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "login",
+        "status": 200,
+        "ms": 192.49,
+        "sentAt": 1791723906738,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 3
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "login",
+        "status": 200,
+        "ms": 194.49,
+        "sentAt": 1791723906739,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 4
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "login",
+        "status": 200,
+        "ms": 197.58,
+        "sentAt": 1791723906739,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 5
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "login",
+        "status": 200,
+        "ms": 199.19,
+        "sentAt": 1791723906738,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 2
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "login",
+        "status": 200,
+        "ms": 197.96,
+        "sentAt": 1791723906740,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 9
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "login",
+        "status": 200,
+        "ms": 201,
+        "sentAt": 1791723906739,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 6
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "login",
+        "status": 200,
+        "ms": 201.03,
+        "sentAt": 1791723906741,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 10
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "me",
+        "status": 200,
+        "ms": 40.21,
+        "sentAt": 1791723906929,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "me",
+        "status": 200,
+        "ms": 36,
+        "sentAt": 1791723906933,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 7
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "me",
+        "status": 200,
+        "ms": 39.76,
+        "sentAt": 1791723906934,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 8
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "me",
+        "status": 200,
+        "ms": 41.84,
+        "sentAt": 1791723906949,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 6
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "me",
+        "status": 200,
+        "ms": 41.68,
+        "sentAt": 1791723906950,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 10
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "me",
+        "status": 200,
+        "ms": 45.63,
+        "sentAt": 1791723906946,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 2
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "me",
+        "status": 200,
+        "ms": 47.72,
+        "sentAt": 1791723906945,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 4
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "me",
+        "status": 200,
+        "ms": 47.27,
+        "sentAt": 1791723906946,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 5
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "me",
+        "status": 200,
+        "ms": 45.26,
+        "sentAt": 1791723906948,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 9
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "me",
+        "status": 200,
+        "ms": 51.35,
+        "sentAt": 1791723906942,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 3
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "logout-csrf",
+        "status": 200,
+        "ms": 29.18,
+        "sentAt": 1791723906970,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "logout-csrf",
+        "status": 200,
+        "ms": 30.47,
+        "sentAt": 1791723906972,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 7
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "logout-csrf",
+        "status": 200,
+        "ms": 32.97,
+        "sentAt": 1791723906978,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 8
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "logout-csrf",
+        "status": 200,
+        "ms": 33.42,
+        "sentAt": 1791723906995,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 6
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "logout-csrf",
+        "status": 200,
+        "ms": 36.21,
+        "sentAt": 1791723906996,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 10
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "logout-csrf",
+        "status": 200,
+        "ms": 41.69,
+        "sentAt": 1791723906997,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 2
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "logout-csrf",
+        "status": 200,
+        "ms": 44.23,
+        "sentAt": 1791723906998,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 4
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "logout-csrf",
+        "status": 200,
+        "ms": 48.47,
+        "sentAt": 1791723907003,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 5
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "logout-csrf",
+        "status": 200,
+        "ms": 47.6,
+        "sentAt": 1791723907004,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 3
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "logout",
+        "status": 204,
+        "ms": 41.44,
+        "sentAt": 1791723907014,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "logout-csrf",
+        "status": 200,
+        "ms": 54.89,
+        "sentAt": 1791723907006,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 9
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "logout",
+        "status": 204,
+        "ms": 46.32,
+        "sentAt": 1791723907015,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 7
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "logout",
+        "status": 204,
+        "ms": 46.77,
+        "sentAt": 1791723907021,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 8
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "logout",
+        "status": 204,
+        "ms": 41.97,
+        "sentAt": 1791723907031,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 6
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "logout",
+        "status": 204,
+        "ms": 41.59,
+        "sentAt": 1791723907035,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 10
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "logout",
+        "status": 204,
+        "ms": 36.99,
+        "sentAt": 1791723907040,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 2
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "logout",
+        "status": 204,
+        "ms": 39.37,
+        "sentAt": 1791723907045,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 4
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "logout",
+        "status": 204,
+        "ms": 34.89,
+        "sentAt": 1791723907053,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 5
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "after-logout",
+        "status": 401,
+        "ms": 31.94,
+        "sentAt": 1791723907060,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "logout",
+        "status": 204,
+        "ms": 39.7,
+        "sentAt": 1791723907054,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 3
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "logout",
+        "status": 204,
+        "ms": 35.85,
+        "sentAt": 1791723907064,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 9
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "after-logout",
+        "status": 401,
+        "ms": 40.21,
+        "sentAt": 1791723907066,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 7
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "after-logout",
+        "status": 401,
+        "ms": 38.2,
+        "sentAt": 1791723907073,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 8
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "after-logout",
+        "status": 401,
+        "ms": 35.06,
+        "sentAt": 1791723907080,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 10
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "after-logout",
+        "status": 401,
+        "ms": 38.9,
+        "sentAt": 1791723907077,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 6
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "after-logout",
+        "status": 401,
+        "ms": 28.89,
+        "sentAt": 1791723907090,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 4
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "after-logout",
+        "status": 401,
+        "ms": 38.02,
+        "sentAt": 1791723907082,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 2
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "after-logout",
+        "status": 401,
+        "ms": 30.25,
+        "sentAt": 1791723907092,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 5
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "after-logout",
+        "status": 401,
+        "ms": 26.18,
+        "sentAt": 1791723907098,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 3
+      },
+      {
+        "scenario": "burst-2",
+        "stage": "after-logout",
+        "status": 401,
+        "ms": 22.22,
+        "sentAt": 1791723907103,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 9
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 29.2,
+        "sentAt": 1791723937133,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 30.04,
+        "sentAt": 1791723937133,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 31.94,
+        "sentAt": 1791723937132,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 30.91,
+        "sentAt": 1791723937133,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 29.92,
+        "sentAt": 1791723937135,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 31.13,
+        "sentAt": 1791723937134,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 30.98,
+        "sentAt": 1791723937134,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 29.72,
+        "sentAt": 1791723937136,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 30.56,
+        "sentAt": 1791723937135,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 30.67,
+        "sentAt": 1791723937135,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "login",
+        "status": 200,
+        "ms": 212.11,
+        "sentAt": 1791723942146,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 8
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "login",
+        "status": 200,
+        "ms": 212.45,
+        "sentAt": 1791723942147,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 10
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "login",
+        "status": 200,
+        "ms": 216.87,
+        "sentAt": 1791723942143,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 2
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "login",
+        "status": 200,
+        "ms": 215.09,
+        "sentAt": 1791723942146,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 7
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "login",
+        "status": 200,
+        "ms": 218.82,
+        "sentAt": 1791723942144,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 4
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "login",
+        "status": 200,
+        "ms": 218.58,
+        "sentAt": 1791723942145,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 6
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "login",
+        "status": 200,
+        "ms": 217.46,
+        "sentAt": 1791723942147,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 9
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "login",
+        "status": 200,
+        "ms": 220.64,
+        "sentAt": 1791723942144,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 3
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "login",
+        "status": 200,
+        "ms": 223.12,
+        "sentAt": 1791723942143,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "login",
+        "status": 200,
+        "ms": 221.24,
+        "sentAt": 1791723942145,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 5
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "me",
+        "status": 200,
+        "ms": 36.28,
+        "sentAt": 1791723942371,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 6
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "me",
+        "status": 200,
+        "ms": 33.73,
+        "sentAt": 1791723942375,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "me",
+        "status": 200,
+        "ms": 39.84,
+        "sentAt": 1791723942369,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 7
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "me",
+        "status": 200,
+        "ms": 33.93,
+        "sentAt": 1791723942376,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 5
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "me",
+        "status": 200,
+        "ms": 36.63,
+        "sentAt": 1791723942373,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 3
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "me",
+        "status": 200,
+        "ms": 39.49,
+        "sentAt": 1791723942371,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 4
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "me",
+        "status": 200,
+        "ms": 44.21,
+        "sentAt": 1791723942366,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 8
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "me",
+        "status": 200,
+        "ms": 43.62,
+        "sentAt": 1791723942367,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 10
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "me",
+        "status": 200,
+        "ms": 38.48,
+        "sentAt": 1791723942373,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 9
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "me",
+        "status": 200,
+        "ms": 43.86,
+        "sentAt": 1791723942368,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 2
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "logout-csrf",
+        "status": 200,
+        "ms": 31.62,
+        "sentAt": 1791723942412,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 6
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "logout-csrf",
+        "status": 200,
+        "ms": 31.72,
+        "sentAt": 1791723942413,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "logout-csrf",
+        "status": 200,
+        "ms": 33.38,
+        "sentAt": 1791723942414,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 7
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "logout-csrf",
+        "status": 200,
+        "ms": 32.94,
+        "sentAt": 1791723942414,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 3
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "logout-csrf",
+        "status": 200,
+        "ms": 30.88,
+        "sentAt": 1791723942417,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 10
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "logout-csrf",
+        "status": 200,
+        "ms": 34.79,
+        "sentAt": 1791723942414,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 5
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "logout-csrf",
+        "status": 200,
+        "ms": 33.03,
+        "sentAt": 1791723942418,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 9
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "logout-csrf",
+        "status": 200,
+        "ms": 35.14,
+        "sentAt": 1791723942416,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 8
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "logout-csrf",
+        "status": 200,
+        "ms": 36.57,
+        "sentAt": 1791723942415,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 4
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "logout-csrf",
+        "status": 200,
+        "ms": 33.45,
+        "sentAt": 1791723942418,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 2
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "logout",
+        "status": 204,
+        "ms": 24.05,
+        "sentAt": 1791723942445,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 6
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "logout",
+        "status": 204,
+        "ms": 25.43,
+        "sentAt": 1791723942449,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "logout",
+        "status": 204,
+        "ms": 34.08,
+        "sentAt": 1791723942454,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 3
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "logout",
+        "status": 204,
+        "ms": 34.05,
+        "sentAt": 1791723942454,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 7
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "logout",
+        "status": 204,
+        "ms": 35.43,
+        "sentAt": 1791723942453,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 10
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "logout",
+        "status": 204,
+        "ms": 35.39,
+        "sentAt": 1791723942455,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 5
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "logout",
+        "status": 204,
+        "ms": 34.72,
+        "sentAt": 1791723942457,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 9
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "logout",
+        "status": 204,
+        "ms": 32.31,
+        "sentAt": 1791723942459,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 4
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "logout",
+        "status": 204,
+        "ms": 34.78,
+        "sentAt": 1791723942457,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 8
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "after-logout",
+        "status": 401,
+        "ms": 24.47,
+        "sentAt": 1791723942470,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 6
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "logout",
+        "status": 204,
+        "ms": 37.12,
+        "sentAt": 1791723942460,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 2
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "after-logout",
+        "status": 401,
+        "ms": 21.76,
+        "sentAt": 1791723942475,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "after-logout",
+        "status": 401,
+        "ms": 23.64,
+        "sentAt": 1791723942489,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 3
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "after-logout",
+        "status": 401,
+        "ms": 32.71,
+        "sentAt": 1791723942494,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 7
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "after-logout",
+        "status": 401,
+        "ms": 34.04,
+        "sentAt": 1791723942493,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 10
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "after-logout",
+        "status": 401,
+        "ms": 33.31,
+        "sentAt": 1791723942496,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 5
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "after-logout",
+        "status": 401,
+        "ms": 31,
+        "sentAt": 1791723942499,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 8
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "after-logout",
+        "status": 401,
+        "ms": 32.24,
+        "sentAt": 1791723942498,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 9
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "after-logout",
+        "status": 401,
+        "ms": 31.21,
+        "sentAt": 1791723942500,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 4
+      },
+      {
+        "scenario": "burst-3",
+        "stage": "after-logout",
+        "status": 401,
+        "ms": 23.13,
+        "sentAt": 1791723942509,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 2
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 29.75,
+        "sentAt": 1791723972550,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 31.54,
+        "sentAt": 1791723972550,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 30.64,
+        "sentAt": 1791723972551,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 30.12,
+        "sentAt": 1791723972552,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 29.64,
+        "sentAt": 1791723972552,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 30.92,
+        "sentAt": 1791723972551,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 33.18,
+        "sentAt": 1791723972549,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 30.47,
+        "sentAt": 1791723972552,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 32.88,
+        "sentAt": 1791723972550,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 34.95,
+        "sentAt": 1791723972548,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "login-0",
+        "status": 200,
+        "ms": 138.45,
+        "sentAt": 1791723977563,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 8
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "login-0",
+        "status": 200,
+        "ms": 141.46,
+        "sentAt": 1791723977561,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 3
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "login-0",
+        "status": 200,
+        "ms": 143.27,
+        "sentAt": 1791723977562,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 5
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "login-0",
+        "status": 200,
+        "ms": 151.02,
+        "sentAt": 1791723977560,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 2
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "login-0",
+        "status": 200,
+        "ms": 157.48,
+        "sentAt": 1791723977563,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 9
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "login-0",
+        "status": 200,
+        "ms": 165.06,
+        "sentAt": 1791723977559,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "login-0",
+        "status": 200,
+        "ms": 164.47,
+        "sentAt": 1791723977563,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 10
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "login-0",
+        "status": 200,
+        "ms": 166.91,
+        "sentAt": 1791723977562,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 6
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "login-0",
+        "status": 200,
+        "ms": 172.47,
+        "sentAt": 1791723977561,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 4
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "login-0",
+        "status": 200,
+        "ms": 174.78,
+        "sentAt": 1791723977562,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 7
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "me",
+        "status": 200,
+        "ms": 34.51,
+        "sentAt": 1791723977703,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 8
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "me",
+        "status": 200,
+        "ms": 31.88,
+        "sentAt": 1791723977706,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 3
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "me",
+        "status": 200,
+        "ms": 30.34,
+        "sentAt": 1791723977709,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 5
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "me",
+        "status": 200,
+        "ms": 30.96,
+        "sentAt": 1791723977715,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 2
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "me",
+        "status": 200,
+        "ms": 31.13,
+        "sentAt": 1791723977723,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 9
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "me",
+        "status": 200,
+        "ms": 27.73,
+        "sentAt": 1791723977727,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "me",
+        "status": 200,
+        "ms": 27.8,
+        "sentAt": 1791723977731,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 10
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "me",
+        "status": 200,
+        "ms": 34.48,
+        "sentAt": 1791723977734,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 6
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "me",
+        "status": 200,
+        "ms": 35.87,
+        "sentAt": 1791723977740,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 4
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 32.63,
+        "sentAt": 1791723977744,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 8
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 33.54,
+        "sentAt": 1791723977744,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 3
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "me",
+        "status": 200,
+        "ms": 37.37,
+        "sentAt": 1791723977743,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 7
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 38.04,
+        "sentAt": 1791723977746,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 5
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 33.98,
+        "sentAt": 1791723977758,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 2
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 31.42,
+        "sentAt": 1791723977761,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 9
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 20.25,
+        "sentAt": 1791723977773,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 6
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 27.93,
+        "sentAt": 1791723977766,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 10
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 30.71,
+        "sentAt": 1791723977763,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 26.88,
+        "sentAt": 1791723977779,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 4
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 28.78,
+        "sentAt": 1791723977785,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 7
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "login-1",
+        "status": 200,
+        "ms": 136.01,
+        "sentAt": 1791723977781,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 3
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "login-1",
+        "status": 200,
+        "ms": 135.98,
+        "sentAt": 1791723977789,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 5
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "login-1",
+        "status": 200,
+        "ms": 145.28,
+        "sentAt": 1791723977780,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 8
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "me",
+        "status": 200,
+        "ms": 20.11,
+        "sentAt": 1791723977918,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 3
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "me",
+        "status": 200,
+        "ms": 21.7,
+        "sentAt": 1791723977927,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 5
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "me",
+        "status": 200,
+        "ms": 19.77,
+        "sentAt": 1791723977929,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 8
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 20.35,
+        "sentAt": 1791723977940,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 3
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "login-1",
+        "status": 200,
+        "ms": 166.01,
+        "sentAt": 1791723977797,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 10
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "login-1",
+        "status": 200,
+        "ms": 167.66,
+        "sentAt": 1791723977798,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 22.46,
+        "sentAt": 1791723977951,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 8
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 25.95,
+        "sentAt": 1791723977950,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 5
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "login-1",
+        "status": 200,
+        "ms": 182.01,
+        "sentAt": 1791723977796,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 2
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "login-1",
+        "status": 200,
+        "ms": 182.12,
+        "sentAt": 1791723977797,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 6
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "login-1",
+        "status": 200,
+        "ms": 171.97,
+        "sentAt": 1791723977808,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 4
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "login-1",
+        "status": 200,
+        "ms": 183.83,
+        "sentAt": 1791723977796,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 9
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "login-1",
+        "status": 200,
+        "ms": 167.58,
+        "sentAt": 1791723977815,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 7
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "me",
+        "status": 200,
+        "ms": 27.3,
+        "sentAt": 1791723977967,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 10
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "me",
+        "status": 200,
+        "ms": 24.77,
+        "sentAt": 1791723977970,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "me",
+        "status": 200,
+        "ms": 31.44,
+        "sentAt": 1791723977986,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 4
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "me",
+        "status": 200,
+        "ms": 32.78,
+        "sentAt": 1791723977986,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 6
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "me",
+        "status": 200,
+        "ms": 33.94,
+        "sentAt": 1791723977985,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 2
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "me",
+        "status": 200,
+        "ms": 31.91,
+        "sentAt": 1791723977987,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 9
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "me",
+        "status": 200,
+        "ms": 31.6,
+        "sentAt": 1791723977988,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 7
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 22.44,
+        "sentAt": 1791723977998,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 10
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 22.84,
+        "sentAt": 1791723977998,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "login-2",
+        "status": 200,
+        "ms": 88.65,
+        "sentAt": 1791723977962,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 3
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 31.26,
+        "sentAt": 1791723978020,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 4
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 29.64,
+        "sentAt": 1791723978024,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 9
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 34.07,
+        "sentAt": 1791723978022,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 2
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 35.16,
+        "sentAt": 1791723978021,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 6
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 33.92,
+        "sentAt": 1791723978025,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 7
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "me",
+        "status": 200,
+        "ms": 36.59,
+        "sentAt": 1791723978052,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 3
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "login-2",
+        "status": 200,
+        "ms": 115.22,
+        "sentAt": 1791723977976,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 8
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "login-2",
+        "status": 200,
+        "ms": 117.62,
+        "sentAt": 1791723977978,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 5
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 28.59,
+        "sentAt": 1791723978091,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 3
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "me",
+        "status": 200,
+        "ms": 35.6,
+        "sentAt": 1791723978093,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 8
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "me",
+        "status": 200,
+        "ms": 29.46,
+        "sentAt": 1791723978103,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 5
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "login-3",
+        "status": 429,
+        "ms": 22.69,
+        "sentAt": 1791723978122,
+        "passed": true,
+        "retryAfter": 2,
+        "userId": 3
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 18.52,
+        "sentAt": 1791723978130,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 8
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 17.46,
+        "sentAt": 1791723978135,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 5
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "login-3",
+        "status": 429,
+        "ms": 20.54,
+        "sentAt": 1791723978150,
+        "passed": true,
+        "retryAfter": 2,
+        "userId": 8
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "login-2",
+        "status": 200,
+        "ms": 144.61,
+        "sentAt": 1791723978027,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 10
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "login-3",
+        "status": 429,
+        "ms": 18.72,
+        "sentAt": 1791723978154,
+        "passed": true,
+        "retryAfter": 2,
+        "userId": 5
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "login-2",
+        "status": 200,
+        "ms": 151.42,
+        "sentAt": 1791723978028,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "login-2",
+        "status": 200,
+        "ms": 119.38,
+        "sentAt": 1791723978063,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 9
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "login-2",
+        "status": 200,
+        "ms": 123.28,
+        "sentAt": 1791723978065,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 6
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "login-2",
+        "status": 200,
+        "ms": 134.99,
+        "sentAt": 1791723978054,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 4
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "me",
+        "status": 200,
+        "ms": 19.98,
+        "sentAt": 1791723978174,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 10
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "login-2",
+        "status": 200,
+        "ms": 133.51,
+        "sentAt": 1791723978066,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 7
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "login-2",
+        "status": 200,
+        "ms": 133.66,
+        "sentAt": 1791723978066,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 2
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "me",
+        "status": 200,
+        "ms": 22.62,
+        "sentAt": 1791723978180,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "me",
+        "status": 200,
+        "ms": 19.07,
+        "sentAt": 1791723978184,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 9
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "me",
+        "status": 200,
+        "ms": 21.54,
+        "sentAt": 1791723978190,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 6
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "me",
+        "status": 200,
+        "ms": 21.63,
+        "sentAt": 1791723978192,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 4
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 22.59,
+        "sentAt": 1791723978200,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 10
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "me",
+        "status": 200,
+        "ms": 23.56,
+        "sentAt": 1791723978204,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 7
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "me",
+        "status": 200,
+        "ms": 26.74,
+        "sentAt": 1791723978205,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 2
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 24.68,
+        "sentAt": 1791723978207,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 24.84,
+        "sentAt": 1791723978208,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 9
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 20.87,
+        "sentAt": 1791723978217,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 4
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 22.61,
+        "sentAt": 1791723978215,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 6
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "login-3",
+        "status": 429,
+        "ms": 21.59,
+        "sentAt": 1791723978225,
+        "passed": true,
+        "retryAfter": 2,
+        "userId": 10
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 18.28,
+        "sentAt": 1791723978228,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 7
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 23.42,
+        "sentAt": 1791723978234,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 2
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "login-3",
+        "status": 429,
+        "ms": 26.15,
+        "sentAt": 1791723978235,
+        "passed": true,
+        "retryAfter": 2,
+        "userId": 1
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "login-3",
+        "status": 429,
+        "ms": 24.73,
+        "sentAt": 1791723978238,
+        "passed": true,
+        "retryAfter": 2,
+        "userId": 9
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "login-3",
+        "status": 429,
+        "ms": 24.87,
+        "sentAt": 1791723978242,
+        "passed": true,
+        "retryAfter": 2,
+        "userId": 4
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "login-3",
+        "status": 429,
+        "ms": 24.2,
+        "sentAt": 1791723978243,
+        "passed": true,
+        "retryAfter": 2,
+        "userId": 6
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "login-3",
+        "status": 429,
+        "ms": 19.88,
+        "sentAt": 1791723978250,
+        "passed": true,
+        "retryAfter": 2,
+        "userId": 7
+      },
+      {
+        "scenario": "ip-saturation",
+        "stage": "login-3",
+        "status": 429,
+        "ms": 15.59,
+        "sentAt": 1791723978259,
+        "passed": true,
+        "retryAfter": 2,
+        "userId": 2
+      },
+      {
+        "scenario": "account-cooldown",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 21,
+        "sentAt": 1791724045153,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "account-cooldown",
+        "stage": "wrong-0",
+        "status": 401,
+        "ms": 70,
+        "sentAt": 1791724045225,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "account-cooldown",
+        "stage": "wrong-1",
+        "status": 401,
+        "ms": 57,
+        "sentAt": 1791724045364,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "account-cooldown",
+        "stage": "wrong-2",
+        "status": 401,
+        "ms": 57,
+        "sentAt": 1791724045517,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "account-cooldown",
+        "stage": "wrong-3",
+        "status": 401,
+        "ms": 58,
+        "sentAt": 1791724045661,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "account-cooldown",
+        "stage": "wrong-4",
+        "status": 401,
+        "ms": 55,
+        "sentAt": 1791724045814,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "account-cooldown",
+        "stage": "correct-during-cooldown",
+        "status": 429,
+        "ms": 27,
+        "sentAt": 1791724045954,
+        "passed": true,
+        "retryAfter": 30,
+        "userId": null
+      },
+      {
+        "scenario": "account-cooldown",
+        "stage": "alias-during-cooldown",
+        "status": 429,
+        "ms": 14,
+        "sentAt": 1791724046079,
+        "passed": true,
+        "retryAfter": 30,
+        "userId": null
+      },
+      {
+        "scenario": "account-cooldown",
+        "stage": "correct-after-cooldown",
+        "status": 200,
+        "ms": 72,
+        "sentAt": 1791724077202,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "account-cooldown",
+        "stage": "me",
+        "status": 200,
+        "ms": 13,
+        "sentAt": 1791724077202,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 1
+      },
+      {
+        "scenario": "boundaries",
+        "stage": "login-without-csrf",
+        "status": 403,
+        "ms": 16,
+        "sentAt": 1791724079943,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "boundaries",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 11,
+        "sentAt": 1791724080023,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "boundaries",
+        "stage": "unknown-account",
+        "status": 401,
+        "ms": 68,
+        "sentAt": 1791724080082,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "boundaries",
+        "stage": "malformed-json",
+        "status": 400,
+        "ms": 14,
+        "sentAt": 1791724080217,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "boundaries",
+        "stage": "null-json",
+        "status": 400,
+        "ms": 12,
+        "sentAt": 1791724080341,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "boundaries",
+        "stage": "missing-password",
+        "status": 400,
+        "ms": 13,
+        "sentAt": 1791724080449,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "boundaries",
+        "stage": "oversize-body",
+        "status": 400,
+        "ms": 14,
+        "sentAt": 1791724080543,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "boundaries",
+        "stage": "wrong-content-type",
+        "status": 400,
+        "ms": 14,
+        "sentAt": 1791724080651,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "boundaries",
+        "stage": "empty-password",
+        "status": 400,
+        "ms": 18,
+        "sentAt": 1791724080761,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "boundaries",
+        "stage": "valid",
+        "status": 200,
+        "ms": 76,
+        "sentAt": 1791724080886,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 2
+      },
+      {
+        "scenario": "boundaries",
+        "stage": "me",
+        "status": 200,
+        "ms": 15,
+        "sentAt": 1791724080886,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 2
+      },
+      {
+        "scenario": "boundaries",
+        "stage": "fresh-csrf-for-permission",
+        "status": 200,
+        "ms": 16,
+        "sentAt": 1791724080886,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 2
+      },
+      {
+        "scenario": "boundaries",
+        "stage": "other-account-nickname",
+        "status": 403,
+        "ms": 21,
+        "sentAt": 1791724080886,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 2
+      }
+    ]
+  },
+  "resilience": {
+    "runId": "25cf7a8485",
+    "baseUrl": "https://localhost:5173",
+    "runner": "Postman CLI contract checks and Node standard HTTP concurrency",
+    "mode": "resilience",
+    "runs": [
+      {
+        "scenario": "setup",
+        "exitCode": 0,
+        "metrics": 2
+      },
+      {
+        "scenario": "baseline",
+        "exitCode": 0,
+        "metrics": 6
+      },
+      {
+        "scenario": "same-account-concurrent",
+        "exitCode": 0,
+        "metrics": 20,
+        "runner": "Node standard HTTP client"
+      },
+      {
+        "scenario": "same-account-cooldown",
+        "exitCode": 0,
+        "metrics": 3
+      },
+      {
+        "scenario": "redis-outage",
+        "exitCode": 0,
+        "metrics": 2
+      },
+      {
+        "scenario": "redis-recovery",
+        "exitCode": 0,
+        "metrics": 2
+      },
+      {
+        "scenario": "postgres-outage",
+        "exitCode": 0,
+        "metrics": 2
+      },
+      {
+        "scenario": "postgres-recovery",
+        "exitCode": 0,
+        "metrics": 2
+      }
+    ],
+    "summary": {
+      "setup": {
+        "samples": 0,
+        "statuses": {},
+        "contractFailures": 0,
+        "avgMs": null,
+        "p95Ms": null,
+        "maxMs": null,
+        "sendSpreadMs": null
+      },
+      "baseline": {
+        "samples": 1,
+        "statuses": {
+          "200": 1
+        },
+        "contractFailures": 0,
+        "avgMs": 60,
+        "p95Ms": 60,
+        "maxMs": 60,
+        "sendSpreadMs": 0
+      },
+      "same-account-concurrent": {
+        "samples": 10,
+        "statuses": {
+          "401": 1,
+          "429": 9
+        },
+        "contractFailures": 0,
+        "avgMs": 44,
+        "p95Ms": 88.14,
+        "maxMs": 88.14,
+        "sendSpreadMs": 4
+      },
+      "same-account-cooldown": {
+        "samples": 0,
+        "statuses": {},
+        "contractFailures": 0,
+        "avgMs": null,
+        "p95Ms": null,
+        "maxMs": null,
+        "sendSpreadMs": null
+      },
+      "redis-outage": {
+        "samples": 0,
+        "statuses": {},
+        "contractFailures": 0,
+        "avgMs": null,
+        "p95Ms": null,
+        "maxMs": null,
+        "sendSpreadMs": null
+      },
+      "redis-recovery": {
+        "samples": 0,
+        "statuses": {},
+        "contractFailures": 0,
+        "avgMs": null,
+        "p95Ms": null,
+        "maxMs": null,
+        "sendSpreadMs": null
+      },
+      "postgres-outage": {
+        "samples": 0,
+        "statuses": {},
+        "contractFailures": 0,
+        "avgMs": null,
+        "p95Ms": null,
+        "maxMs": null,
+        "sendSpreadMs": null
+      },
+      "postgres-recovery": {
+        "samples": 0,
+        "statuses": {},
+        "contractFailures": 0,
+        "avgMs": null,
+        "p95Ms": null,
+        "maxMs": null,
+        "sendSpreadMs": null
+      }
+    },
+    "metrics": [
+      {
+        "scenario": "setup",
+        "stage": "setup-csrf",
+        "status": 200,
+        "ms": 13,
+        "sentAt": 1791724131973,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "setup",
+        "stage": "signup",
+        "status": 201,
+        "ms": 68,
+        "sentAt": 1791724132069,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100021
+      },
+      {
+        "scenario": "baseline",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 13,
+        "sentAt": 1791724135261,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "baseline",
+        "stage": "login",
+        "status": 200,
+        "ms": 60,
+        "sentAt": 1791724135319,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100021
+      },
+      {
+        "scenario": "baseline",
+        "stage": "me",
+        "status": 200,
+        "ms": 13,
+        "sentAt": 1791724135319,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100021
+      },
+      {
+        "scenario": "baseline",
+        "stage": "logout-csrf",
+        "status": 200,
+        "ms": 12,
+        "sentAt": 1791724135319,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100021
+      },
+      {
+        "scenario": "baseline",
+        "stage": "logout",
+        "status": 204,
+        "ms": 10,
+        "sentAt": 1791724135319,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100021
+      },
+      {
+        "scenario": "baseline",
+        "stage": "after-logout",
+        "status": 401,
+        "ms": 8,
+        "sentAt": 1791724135319,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100021
+      },
+      {
+        "scenario": "same-account-concurrent",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 33.01,
+        "sentAt": 1791724136213,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "same-account-concurrent",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 32.63,
+        "sentAt": 1791724136215,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "same-account-concurrent",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 31.56,
+        "sentAt": 1791724136216,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "same-account-concurrent",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 30.94,
+        "sentAt": 1791724136217,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "same-account-concurrent",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 34.4,
+        "sentAt": 1791724136214,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "same-account-concurrent",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 33.24,
+        "sentAt": 1791724136215,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "same-account-concurrent",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 61.87,
+        "sentAt": 1791724136187,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "same-account-concurrent",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 34.37,
+        "sentAt": 1791724136215,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "same-account-concurrent",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 36.31,
+        "sentAt": 1791724136214,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "same-account-concurrent",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 38.15,
+        "sentAt": 1791724136212,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "same-account-concurrent",
+        "stage": "login",
+        "status": 429,
+        "ms": 39.45,
+        "sentAt": 1791724141190,
+        "passed": true,
+        "retryAfter": 1,
+        "userId": null
+      },
+      {
+        "scenario": "same-account-concurrent",
+        "stage": "login",
+        "status": 429,
+        "ms": 39.68,
+        "sentAt": 1791724141190,
+        "passed": true,
+        "retryAfter": 1,
+        "userId": null
+      },
+      {
+        "scenario": "same-account-concurrent",
+        "stage": "login",
+        "status": 429,
+        "ms": 37.83,
+        "sentAt": 1791724141193,
+        "passed": true,
+        "retryAfter": 1,
+        "userId": null
+      },
+      {
+        "scenario": "same-account-concurrent",
+        "stage": "login",
+        "status": 429,
+        "ms": 38.46,
+        "sentAt": 1791724141192,
+        "passed": true,
+        "retryAfter": 1,
+        "userId": null
+      },
+      {
+        "scenario": "same-account-concurrent",
+        "stage": "login",
+        "status": 429,
+        "ms": 39.41,
+        "sentAt": 1791724141191,
+        "passed": true,
+        "retryAfter": 1,
+        "userId": null
+      },
+      {
+        "scenario": "same-account-concurrent",
+        "stage": "login",
+        "status": 429,
+        "ms": 40.64,
+        "sentAt": 1791724141191,
+        "passed": true,
+        "retryAfter": 1,
+        "userId": null
+      },
+      {
+        "scenario": "same-account-concurrent",
+        "stage": "login",
+        "status": 429,
+        "ms": 39.98,
+        "sentAt": 1791724141192,
+        "passed": true,
+        "retryAfter": 1,
+        "userId": null
+      },
+      {
+        "scenario": "same-account-concurrent",
+        "stage": "login",
+        "status": 429,
+        "ms": 40.95,
+        "sentAt": 1791724141191,
+        "passed": true,
+        "retryAfter": 1,
+        "userId": null
+      },
+      {
+        "scenario": "same-account-concurrent",
+        "stage": "login",
+        "status": 429,
+        "ms": 39.42,
+        "sentAt": 1791724141193,
+        "passed": true,
+        "retryAfter": 1,
+        "userId": null
+      },
+      {
+        "scenario": "same-account-concurrent",
+        "stage": "login",
+        "status": 401,
+        "ms": 88.14,
+        "sentAt": 1791724141189,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "same-account-cooldown",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 15,
+        "sentAt": 1791724142993,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "same-account-cooldown",
+        "stage": "correct-login",
+        "status": 200,
+        "ms": 57,
+        "sentAt": 1791724143047,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100021
+      },
+      {
+        "scenario": "same-account-cooldown",
+        "stage": "me",
+        "status": 200,
+        "ms": 12,
+        "sentAt": 1791724143047,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": 100021
+      },
+      {
+        "scenario": "redis-outage",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 13,
+        "sentAt": 1791724150107,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "redis-outage",
+        "stage": "outage-login",
+        "status": 503,
+        "ms": 12,
+        "sentAt": 1791724163330,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "redis-recovery",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 13,
+        "sentAt": 1791724172284,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "redis-recovery",
+        "stage": "unknown-login",
+        "status": 401,
+        "ms": 69,
+        "sentAt": 1791724172340,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "postgres-outage",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 14,
+        "sentAt": 1791724175470,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "postgres-outage",
+        "stage": "outage-login",
+        "status": 503,
+        "ms": 2035,
+        "sentAt": 1791724188716,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "postgres-recovery",
+        "stage": "csrf",
+        "status": 200,
+        "ms": 13,
+        "sentAt": 1791724199231,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      },
+      {
+        "scenario": "postgres-recovery",
+        "stage": "unknown-login",
+        "status": 401,
+        "ms": 70,
+        "sentAt": 1791724199271,
+        "passed": true,
+        "retryAfter": 0,
+        "userId": null
+      }
+    ]
+  }
+}

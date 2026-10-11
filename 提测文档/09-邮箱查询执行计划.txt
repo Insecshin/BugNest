@@ -1,0 +1,24 @@
+                                                QUERY PLAN                                                 
+-----------------------------------------------------------------------------------------------------------
+ Seq Scan on app_users  (cost=0.00..3756.94 rows=1 width=169) (actual time=0.021..8.418 rows=1.00 loops=1)
+   Filter: ((email)::text = 'fixture_1@example.invalid'::text)
+   Rows Removed by Filter: 100074
+   Buffers: shared hit=2506
+ Planning:
+   Buffers: shared hit=141
+ Planning Time: 1.152 ms
+ Execution Time: 8.450 ms
+(8 rows)
+
+                                                              QUERY PLAN                                                              
+--------------------------------------------------------------------------------------------------------------------------------------
+ Index Scan using uq_app_users_email_ci on app_users  (cost=0.42..8.44 rows=1 width=169) (actual time=0.026..0.027 rows=1.00 loops=1)
+   Index Cond: (lower(btrim((email)::text)) = 'fixture_1@example.invalid'::text)
+   Index Searches: 1
+   Buffers: shared hit=4
+ Planning:
+   Buffers: shared hit=7
+ Planning Time: 0.497 ms
+ Execution Time: 0.071 ms
+(8 rows)
+
